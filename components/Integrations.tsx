@@ -33,9 +33,6 @@ export default function Integrations() {
                   src={integration.logo} 
                   alt={integration.name}
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.src = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#ccc"/><text x="12" y="17" font-size="12" text-anchor="middle" fill="#666">${integration.name.charAt(0)}</text></svg>`)}`;
-                  }}
                 />
               </div>
               <div className="text-sm font-medium text-gray-700 text-center">{integration.name}</div>
