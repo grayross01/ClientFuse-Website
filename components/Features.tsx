@@ -9,7 +9,7 @@ const features = [
   {
     icon: Shield,
     title: "Enterprise-Grade Security",
-    description: "GDPR compliant, SOC 2 certified, and officially approved by Meta, Google, and TikTok. Your clients' data is always protected.",
+    description: "Officially approved by Meta, Google, and TikTok. Your clients' data is always protected.",
   },
   {
     icon: Bell,

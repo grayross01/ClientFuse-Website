@@ -9,8 +9,8 @@ const faqs = [
     answer: "ClientFuse supports 23+ major marketing platforms including Facebook, Instagram, TikTok Ads, LinkedIn, Google Ads, Google Analytics, Google Tag Manager, Google Business Profile, Google Search Console, Google Merchant Center, Shopify, WordPress, YouTube, Microsoft Ads, Pinterest Ads, X (Twitter), GoDaddy, HubSpot, Klaviyo, Mailchimp, Snapchat Ads, Squarespace, and Yelp. We're constantly adding more integrations based on user feedback.",
   },
   {
-    question: "Is ClientFuse secure and GDPR compliant?",
-    answer: "Absolutely! ClientFuse is SOC 2 certified, GDPR compliant, and officially approved by Meta, Google, and TikTok. All data is encrypted and stored securely. We're partnered with major platforms to ensure your access is granted through their official APIs. You can request a Data Processing Agreement (DPA) at any time.",
+    question: "Is ClientFuse secure?",
+    answer: "Absolutely! ClientFuse is officially approved by Meta, Google, and TikTok. All data is encrypted and stored securely. We're partnered with major platforms to ensure your access is granted through their official APIs.",
   },
   {
     question: "Do my clients need to create a ClientFuse account?",

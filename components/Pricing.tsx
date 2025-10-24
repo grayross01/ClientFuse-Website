@@ -132,10 +132,6 @@ export default function Pricing() {
               <Check className="w-5 h-5 text-green-600" />
               <span>Enterprise-grade security</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5 text-green-600" />
-              <span>GDPR compliant</span>
-            </div>
           </div>
         </div>
       </div>

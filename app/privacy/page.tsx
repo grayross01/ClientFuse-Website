@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Compliance</h2>
             <p className="text-gray-700">
-              We are committed to complying with applicable data protection laws, including GDPR (General Data Protection Regulation) for European users and CCPA (California Consumer Privacy Act) for California residents.
+              We are committed to complying with applicable data protection laws, including CCPA (California Consumer Privacy Act) for California residents.
             </p>
           </section>
 
