@@ -2,6 +2,9 @@
 
 Marketing website for ClientFuse.io - Simplifying client account access for marketing agencies.
 
+## Live Site
+Visit your deployed site at: https://client-fuse-website.vercel.app
+
 ## Getting Started
 
 ### Install Dependencies
