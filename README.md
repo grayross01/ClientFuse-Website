@@ -3,7 +3,7 @@
 Marketing website for ClientFuse.io - Simplifying client account access for marketing agencies.
 
 ## Live Site
-Visit your deployed site at: https://clientfuse.io (Production deployment)
+Visit your deployed site at: https://clientfuse.io
 
 ## Getting Started
 
