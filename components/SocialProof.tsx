@@ -26,14 +26,6 @@ export default function SocialProof() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <span className="text-gray-700 font-semibold">4.9/5 on G2</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Trusted by <span className="gradient-text">marketing professionals</span>
           </h2>
