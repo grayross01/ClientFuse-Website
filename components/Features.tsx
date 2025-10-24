@@ -1,4 +1,4 @@
-import { Zap, Shield, Search, Palette, BarChart } from "lucide-react";
+import { Zap, Shield, Search, Palette, BarChart, Clock } from "lucide-react";
 
 const features = [
   {
@@ -25,6 +25,11 @@ const features = [
     icon: BarChart,
     title: "Complete Dashboard",
     description: "Track every request, see who's granted access, and monitor your onboarding pipeline all in one beautiful dashboard.",
+  },
+  {
+    icon: Clock,
+    title: "Setup in Minutes",
+    description: "Get started in minutes with no technical setup required. Just connect your accounts and start sending your link to clients.",
   },
 ];
 
