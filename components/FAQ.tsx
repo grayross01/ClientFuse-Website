@@ -6,15 +6,15 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "What platforms can I access through ClientFuse?",
-    answer: "ClientFuse supports 23+ major marketing platforms including Facebook, Instagram, TikTok Ads, LinkedIn, Google Ads, Google Analytics, Google Tag Manager, Google Business Profile, Google Search Console, Google Merchant Center, Shopify, WordPress, YouTube, Microsoft Ads, Pinterest Ads, X (Twitter), GoDaddy, HubSpot, Klaviyo, Mailchimp, Snapchat Ads, Squarespace, and Yelp. We're constantly adding more integrations based on user feedback.",
+    answer: "ClientFuse supports major marketing platforms including Facebook, Instagram, Google Ads, Google Analytics, Google Tag Manager, Google Business Profile, Google Search Console, and Google Merchant Center. We're constantly adding more integrations based on user feedback.",
   },
   {
     question: "Is ClientFuse secure?",
-    answer: "Absolutely! ClientFuse is officially approved by Meta, Google, and TikTok. All data is encrypted and stored securely. We're partnered with major platforms to ensure your access is granted through their official APIs.",
+    answer: "Absolutely! ClientFuse is officially approved by Meta and Google. All data is encrypted and stored securely. We're partnered with major platforms to ensure your access is granted through their official APIs.",
   },
   {
     question: "Do my clients need to create a ClientFuse account?",
-    answer: "No! Your clients don't need to create an account with ClientFuse. They simply click your link, log into their existing accounts (Facebook, Google, TikTok, etc.), and grant access through our guided flow. This keeps the process simple and reduces friction.",
+    answer: "No! Your clients don't need to create an account with ClientFuse. They simply click your link, log into their existing accounts (Facebook, Google, etc.), and grant access through our guided flow. This keeps the process simple and reduces friction.",
   },
   {
     question: "What happens if I cancel my subscription?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How quickly will I get access after sending a link?",
-    answer: "Most clients grant access within minutes of receiving your link. You'll get a real-time notification as soon as they complete the flow. The entire process typically takes less than 5 minutes per platform.",
+    answer: "Most clients grant access within minutes of receiving your link. You'll get notified as soon as they complete the flow. The entire process typically takes less than 5 minutes per platform.",
   },
   {
     question: "Do you have a free trial?",

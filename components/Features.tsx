@@ -1,20 +1,15 @@
-import { Zap, Shield, Bell, Search, Palette, BarChart } from "lucide-react";
+import { Zap, Shield, Search, Palette, BarChart } from "lucide-react";
 
 const features = [
   {
     icon: Zap,
     title: "One Link to Rule Them All",
-    description: "Forget the PDFs and complicated instructions. Send one link and get access to everything you need—Meta, Google, TikTok, and more.",
+    description: "Forget the PDFs and complicated instructions. Send one link and get access to everything you need—Meta and Google platforms.",
   },
   {
     icon: Shield,
     title: "Enterprise-Grade Security",
-    description: "Officially approved by Meta, Google, and TikTok. Your clients' data is always protected.",
-  },
-  {
-    icon: Bell,
-    title: "Real-Time Notifications",
-    description: "Never chase access requests again. Get instant alerts when clients grant access, so you can start working immediately.",
+    description: "Officially approved by Meta and Google. Your clients' data is always protected.",
   },
   {
     icon: Search,

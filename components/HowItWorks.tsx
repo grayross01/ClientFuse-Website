@@ -11,7 +11,7 @@ const steps = [
     number: "2",
     icon: UserCheck,
     title: "Client Grants Access",
-    description: "Your client clicks the link, logs into their accounts (Facebook, Google, TikTok, etc.), and grants access in guided steps.",
+    description: "Your client clicks the link, logs into their accounts (Facebook, Google, etc.), and grants access in guided steps.",
   },
   {
     number: "3",

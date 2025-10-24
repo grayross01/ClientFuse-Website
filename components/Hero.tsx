@@ -20,7 +20,7 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-            Send one simple link. Your clients grant access to Facebook, Google, TikTok, and more. You get notified instantly. 
+            Send one simple link. Your clients grant access to Facebook, Google, and more. You get notified instantly. 
             <span className="font-semibold text-gray-900"> That's it.</span>
           </p>
 
