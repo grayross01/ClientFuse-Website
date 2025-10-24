@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ClientFuse - Simplify Client Account Access for Marketing Agencies",
-  description: "Get instant access to your clients' social media and Google accounts with one simple link. No more back-and-forth, no more hassle.",
+  description: "Get instant access to your client social media and Google accounts with one simple link. No more back-and-forth, no more hassle.",
   keywords: "marketing agency, client access, social media management, google ads, facebook ads, account access",
 };
 

@@ -15,7 +15,7 @@ export default function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Get instant access to your <span className="gradient-text">clients' accounts</span>—no hassle, no wait
+            Get instant access to your <span className="gradient-text">client accounts</span>—no hassle, no wait
           </h1>
 
           {/* Subheadline */}

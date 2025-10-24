@@ -9,7 +9,7 @@ const features = [
   {
     icon: Shield,
     title: "Enterprise-Grade Security",
-    description: "Officially approved by Meta and Google. Your clients' data is always protected.",
+    description: "Officially approved by Meta and Google. Your client data is always protected.",
   },
   {
     icon: Search,
