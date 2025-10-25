@@ -1,12 +1,12 @@
 const integrations = [
   { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" },
   { name: "Instagram", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" },
-  { name: "Google Ads", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
-  { name: "Google Analytics", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
-  { name: "Google Tag Manager", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
-  { name: "Google Business Profile", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
-  { name: "Google Search Console", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
-  { name: "Google Merchant Center", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
+  { name: "Google Ads", logo: "https://www.gstatic.com/images/branding/product/1x/google_ads_48dp.png" },
+  { name: "Google Analytics", logo: "https://www.gstatic.com/images/branding/product/1x/analytics_48dp.png" },
+  { name: "Google Tag Manager", logo: "https://www.gstatic.com/images/branding/product/1x/tag_manager_48dp.png" },
+  { name: "Google Business Profile", logo: "https://www.gstatic.com/images/branding/product/1x/business_profile_48dp.png" },
+  { name: "Google Search Console", logo: "https://www.gstatic.com/images/branding/product/1x/search_console_48dp.png" },
+  { name: "Google Merchant Center", logo: "https://www.gstatic.com/images/branding/product/1x/merchant_center_48dp.png" },
 ];
 
 export default function Integrations() {
