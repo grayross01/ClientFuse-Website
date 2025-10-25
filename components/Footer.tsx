@@ -26,6 +26,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
+              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               <li><a href="mailto:support@clientfuse.io" className="hover:text-white transition-colors">Support</a></li>
               <li><a href="mailto:sales@clientfuse.io" className="hover:text-white transition-colors">Sales</a></li>
