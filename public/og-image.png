@@ -1,9 +1,5 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
-    </linearGradient>
     <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
@@ -17,7 +13,7 @@
   <!-- Logo -->
   <g transform="translate(100, 200)">
     <!-- Central hub circle -->
-    <circle cx="80" cy="80" r="50" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="80" cy="80" r="50" fill="#8B5CF6" stroke="#ffffff" stroke-width="6"/>
     
     <!-- Top circle -->
     <circle cx="80" cy="20" r="25" fill="#8B5CF6" stroke="#ffffff" stroke-width="4"/>
