@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Do you have a free trial?",
-    answer: "Yes! Every plan includes a 14-day free trial with no credit card required. The trial extends until you successfully onboard your first client, giving you plenty of time to test ClientFuse with real scenarios.",
+    answer: "Yes! Every plan includes a 14-day free trial with no credit card required.",
   },
 ];
 
