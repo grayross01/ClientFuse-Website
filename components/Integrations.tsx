@@ -3,7 +3,7 @@ const integrations = [
   { name: "Instagram", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" },
   { name: "Google Ads", logo: "/logos/google-ads.png" },
   { name: "Google Analytics", logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/GAnalytics.svg" },
-  { name: "Google Tag Manager", logo: "/logos/google-tag-manager.avif" },
+  { name: "Google Tag Manager", logo: "/logos/google-tag-manager.svg" },
   { name: "Google Business Profile", logo: "/logos/google-business-profile.png" },
   { name: "Google Search Console", logo: "/logos/google-search-console.svg" },
   { name: "Google Merchant Center", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
