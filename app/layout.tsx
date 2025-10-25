@@ -76,6 +76,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg" />
+        <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg" />
+        <link rel="apple-touch-icon" href="/favicon-48x48.svg" />
+        
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZNV0WEVZS"></script>
         <script
