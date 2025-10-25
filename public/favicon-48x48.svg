@@ -1,22 +1,22 @@
 <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <!-- Center shape with 4 concave cutouts -->
-  <path d="M24 9 C 30 9, 36 9, 36 15 C 36 21, 36 21, 30 21 C 24 21, 24 27, 24 33 C 24 39, 18 39, 12 39 C 6 39, 6 33, 6 27 C 6 21, 6 21, 12 21 C 18 21, 18 15, 18 9 C 18 3, 24 3, 24 9 Z" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="1.5"/>
+  <!-- Central hub circle -->
+  <circle cx="24" cy="24" r="9" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="1.5"/>
   
   <!-- Top circle -->
   <circle cx="24" cy="9" r="4.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.2"/>
-  
-  <!-- Right circle -->
-  <circle cx="39" cy="24" r="4.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.2"/>
   
   <!-- Bottom circle -->
   <circle cx="24" cy="39" r="4.5" fill="#EC4899" stroke="#ffffff" stroke-width="1.2"/>
   
   <!-- Left circle -->
   <circle cx="9" cy="24" r="4.5" fill="#3B82F6" stroke="#ffffff" stroke-width="1.2"/>
+  
+  <!-- Right circle -->
+  <circle cx="39" cy="24" r="4.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.2"/>
 </svg>

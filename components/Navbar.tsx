@@ -14,26 +14,26 @@ export default function Navbar() {
             <a href="/" className="flex items-center gap-3">
               <svg width="40" height="40" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
                     <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
                   </linearGradient>
                 </defs>
                 <g transform="translate(10, 10)">
-                  <!-- Center shape with 4 concave cutouts -->
-                  <path d="M20 8 C 26 8, 32 8, 32 14 C 32 20, 32 20, 26 20 C 20 20, 20 26, 20 32 C 20 38, 14 38, 8 38 C 2 38, 2 32, 2 26 C 2 20, 2 20, 8 20 C 14 20, 14 14, 14 8 C 14 2, 20 2, 20 8 Z" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
+                  <!-- Central hub circle -->
+                  <circle cx="20" cy="20" r="8" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
                   
                   <!-- Top circle -->
                   <circle cx="20" cy="8" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
-                  
-                  <!-- Right circle -->
-                  <circle cx="32" cy="20" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
                   
                   <!-- Bottom circle -->
                   <circle cx="20" cy="32" r="4" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
                   
                   <!-- Left circle -->
                   <circle cx="8" cy="20" r="4" fill="#3B82F6" stroke="#ffffff" stroke-width="1.5"/>
+                  
+                  <!-- Right circle -->
+                  <circle cx="32" cy="20" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
                 </g>
               </svg>
               <span className="text-2xl font-bold gradient-text">ClientFuse</span>
