@@ -1,54 +1,62 @@
+"use client";
+
 import { Check, ArrowRight } from "lucide-react";
+import { useState } from "react";
 
 const plans = [
   {
     name: "Starter",
-    price: "$49",
+    monthlyPrice: "$39",
+    annualPrice: "$33",
     period: "/month",
-    description: "Perfect for small agencies just getting started",
+    description: "For freelancers or small agencies managing a few clients.",
     features: [
-      "Up to 5 clients",
-      "All platform integrations",
-      "Custom branding",
+      "Connect up to 5 clients per month",
+      "Branded ClientFuse link",
       "Email support",
-      "Access Detective included",
-      "14-day free trial",
     ],
     cta: "Start Free Trial",
     popular: false,
   },
   {
     name: "Agency",
-    price: "$149",
+    monthlyPrice: "$79",
+    annualPrice: "$67",
     period: "/month",
-    description: "For growing agencies managing multiple clients",
+    description: "For growing agencies ready to brand their client access experience.",
     features: [
-      "Up to 25 clients",
-      "All platform integrations",
-      "Custom branding & domains",
+      "Connect up to 20 clients per month",
+      "White-label links (your logo and domain)",
+      "Multiple team members",
       "Priority support",
-      "Advanced dashboard & analytics",
-      "Access Detective & auto-diagnostics",
-      "Team collaboration (3 users)",
-      "14-day free trial",
     ],
     cta: "Start Free Trial",
     popular: true,
   },
   {
+    name: "Pro",
+    monthlyPrice: "$199",
+    annualPrice: "$169",
+    period: "/month",
+    description: "For established agencies and enterprise partners managing large client portfolios.",
+    features: [
+      "Connect up to 75 clients per month",
+      "Full white-labeling (custom domain, logo, and email)",
+      "API + webhook access",
+      "Dedicated success manager",
+    ],
+    cta: "Start Free Trial",
+    popular: false,
+  },
+  {
     name: "Enterprise",
-    price: "Custom",
+    monthlyPrice: "Custom",
+    annualPrice: "Custom",
     period: "",
-    description: "For large agencies and enterprise teams",
+    description: "For large networks, SaaS platforms, or OEM partners.",
     features: [
       "Unlimited clients",
-      "All platform integrations",
-      "Full white-label solution",
-      "Dedicated account manager",
-      "Custom integrations",
-      "Advanced security & compliance",
-      "Unlimited team members",
-      "SLA & onboarding support",
+      "SLAs, and API integrations",
     ],
     cta: "Contact Sales",
     popular: false,
@@ -56,6 +64,8 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -63,12 +73,39 @@ export default function Pricing() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Simple, transparent <span className="gradient-text">pricing</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Start free, no credit card required. Keep access to all onboarded clients even if you cancel.
           </p>
+          
+          {/* Pricing Toggle */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className={`text-lg font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
+              Monthly
+            </span>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative inline-flex h-8 w-16 items-center rounded-full transition-colors ${
+                isAnnual ? 'bg-blue-600' : 'bg-gray-300'
+              }`}
+            >
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                  isAnnual ? 'translate-x-9' : 'translate-x-1'
+                }`}
+              />
+            </button>
+            <span className={`text-lg font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
+              Annual
+            </span>
+            {isAnnual && (
+              <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
+                Save 15%
+              </span>
+            )}
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -84,18 +121,25 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                <p className="text-gray-600 mb-6">{plan.description}</p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <p className="text-gray-600 mb-4 text-sm">{plan.description}</p>
 
                 <div className="mb-6">
-                  <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-4xl font-bold text-gray-900">
+                    {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  </span>
                   {plan.period && <span className="text-gray-600">{plan.period}</span>}
+                  {isAnnual && plan.monthlyPrice !== "Custom" && (
+                    <div className="text-sm text-gray-500 mt-1">
+                      Billed annually
+                    </div>
+                  )}
                 </div>
 
                 <a
                   href={plan.cta === "Contact Sales" ? "mailto:sales@clientfuse.io" : "https://app.clientfuse.io/signup"}
-                  className={`block w-full text-center py-3 rounded-lg font-semibold mb-8 transition-all duration-200 ${
+                  className={`block w-full text-center py-3 rounded-lg font-semibold mb-6 transition-all duration-200 ${
                     plan.popular
                       ? "btn-primary text-white"
                       : "btn-secondary"
@@ -104,12 +148,12 @@ export default function Pricing() {
                   {plan.cta}
                 </a>
 
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                </li>
+                      <Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
