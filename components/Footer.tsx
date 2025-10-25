@@ -50,7 +50,6 @@ export default function Footer() {
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">Twitter</a>
             <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">LinkedIn</a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors text-sm">GitHub</a>
           </div>
         </div>
       </div>
