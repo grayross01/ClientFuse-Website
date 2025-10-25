@@ -1,0 +1,26 @@
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="chain19" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Arrow chain links -->
+  <g transform="translate(10, 10)">
+    <!-- First arrow -->
+    <path d="M8 3 L 12 7 L 8 11 L 10 11 L 10 13 L 6 13 L 6 11 L 8 11 Z" fill="url(#chain19)" stroke="#ffffff" stroke-width="1.5"/>
+    <!-- Second arrow -->
+    <path d="M18 3 L 22 7 L 18 11 L 20 11 L 20 13 L 16 13 L 16 11 L 18 11 Z" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+    <!-- Third arrow -->
+    <path d="M28 3 L 32 7 L 28 11 L 30 11 L 30 13 L 26 13 L 26 11 L 28 11 Z" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Company name -->
+  <text x="50" y="20" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1E293B">Client</text>
+  <text x="50" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="url(#chain19)">Fuse</text>
+  
+  <!-- Tagline -->
+  <text x="130" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#64748B">Arrow Links</text>
+</svg>
