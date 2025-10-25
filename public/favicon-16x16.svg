@@ -1,18 +1,22 @@
 <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-  <!-- Central purple node -->
-  <circle cx="8" cy="8" r="2.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="0.5"/>
+  <defs>
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Central hub circle -->
+  <circle cx="8" cy="8" r="3" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="0.5"/>
   
-  <!-- Upper-left blue node -->
-  <circle cx="3" cy="3" r="1.5" fill="#3B82F6" stroke="#ffffff" stroke-width="0.4"/>
+  <!-- Top circle -->
+  <circle cx="8" cy="3" r="1.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="0.4"/>
   
-  <!-- Lower-left pink node -->
-  <circle cx="3" cy="13" r="1.5" fill="#EC4899" stroke="#ffffff" stroke-width="0.4"/>
+  <!-- Bottom circle -->
+  <circle cx="8" cy="13" r="1.5" fill="#EC4899" stroke="#ffffff" stroke-width="0.4"/>
   
-  <!-- Lower-right pink node -->
-  <circle cx="13" cy="13" r="1.5" fill="#EC4899" stroke="#ffffff" stroke-width="0.4"/>
+  <!-- Left circle -->
+  <circle cx="3" cy="8" r="1.5" fill="#3B82F6" stroke="#ffffff" stroke-width="0.4"/>
   
-  <!-- Connection lines -->
-  <line x1="8" y1="8" x2="3" y2="3" stroke="#ffffff" stroke-width="0.5"/>
-  <line x1="8" y1="8" x2="3" y2="13" stroke="#ffffff" stroke-width="0.5"/>
-  <line x1="8" y1="8" x2="13" y2="13" stroke="#ffffff" stroke-width="0.5"/>
+  <!-- Right circle -->
+  <circle cx="13" cy="8" r="1.5" fill="#8B5CF6" stroke="#ffffff" stroke-width="0.4"/>
 </svg>

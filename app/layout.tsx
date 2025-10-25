@@ -77,10 +77,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=6" />
-        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg?v=6" />
-        <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg?v=6" />
-        <link rel="apple-touch-icon" href="/favicon-48x48.svg?v=6" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=7" />
+        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg?v=7" />
+        <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg?v=7" />
+        <link rel="apple-touch-icon" href="/favicon-48x48.svg?v=7" />
         
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZNV0WEVZS"></script>
