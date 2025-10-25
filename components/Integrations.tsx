@@ -1,7 +1,7 @@
 const integrations = [
   { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" },
   { name: "Instagram", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" },
-  { name: "Google Ads", logo: "/logos/google-ads.png" },
+  { name: "Google Ads", logo: "/logos/google-ads-manager.png" },
   { name: "Google Analytics", logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/GAnalytics.svg" },
   { name: "Google Tag Manager", logo: "/logos/google-tag-manager.svg" },
   { name: "Google Business Profile", logo: "/logos/google-my-business.png" },
