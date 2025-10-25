@@ -13,27 +13,23 @@ export default function Navbar() {
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-3">
               <svg width="40" height="40" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
                 <g transform="translate(10, 10)">
-                  <!-- Central hub circle -->
-                  <circle cx="20" cy="20" r="8" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
+                  <!-- Central purple node -->
+                  <circle cx="20" cy="20" r="6" fill="#8B5CF6" stroke="#ffffff" stroke-width="2"/>
                   
-                  <!-- Top circle -->
-                  <circle cx="20" cy="8" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+                  <!-- Upper-left blue node -->
+                  <circle cx="8" cy="8" r="4" fill="#3B82F6" stroke="#ffffff" stroke-width="1.5"/>
                   
-                  <!-- Bottom circle -->
-                  <circle cx="20" cy="32" r="4" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
+                  <!-- Lower-left pink node -->
+                  <circle cx="8" cy="32" r="4" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
                   
-                  <!-- Left circle -->
-                  <circle cx="8" cy="20" r="4" fill="#3B82F6" stroke="#ffffff" stroke-width="1.5"/>
+                  <!-- Lower-right pink node -->
+                  <circle cx="32" cy="32" r="4" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
                   
-                  <!-- Right circle -->
-                  <circle cx="32" cy="20" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+                  <!-- Connection lines -->
+                  <line x1="20" y1="20" x2="8" y2="8" stroke="#ffffff" stroke-width="2"/>
+                  <line x1="20" y1="20" x2="8" y2="32" stroke="#ffffff" stroke-width="2"/>
+                  <line x1="20" y1="20" x2="32" y2="32" stroke="#ffffff" stroke-width="2"/>
                 </g>
               </svg>
               <span className="text-2xl font-bold gradient-text">ClientFuse</span>
