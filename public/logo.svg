@@ -1,0 +1,33 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for the icon -->
+  <circle cx="30" cy="30" r="25" fill="#3B82F6" opacity="0.1"/>
+  
+  <!-- Main connection icon - represents linking/fusing -->
+  <g transform="translate(15, 15)">
+    <!-- Central hub -->
+    <circle cx="15" cy="15" r="8" fill="#3B82F6"/>
+    
+    <!-- Connection lines radiating out -->
+    <line x1="15" y1="7" x2="15" y2="3" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="23" y1="15" x2="27" y2="15" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="15" y1="23" x2="15" y2="27" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="7" y1="15" x2="3" y2="15" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Small platform icons at the ends -->
+    <!-- Facebook/Meta -->
+    <circle cx="15" cy="3" r="2" fill="#1877F2"/>
+    <!-- Google -->
+    <circle cx="27" cy="15" r="2" fill="#4285F4"/>
+    <!-- Instagram -->
+    <circle cx="15" cy="27" r="2" fill="#E4405F"/>
+    <!-- Analytics -->
+    <circle cx="3" cy="15" r="2" fill="#FF6B35"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="70" y="25" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1F2937">Client</text>
+  <text x="70" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3B82F6">Fuse</text>
+  
+  <!-- Tagline -->
+  <text x="70" y="55" font-family="Arial, sans-serif" font-size="8" fill="#6B7280">Connect. Access. Simplify.</text>
+</svg>

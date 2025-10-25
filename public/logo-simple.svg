@@ -1,0 +1,32 @@
+<svg width="180" height="50" viewBox="0 0 180 50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon container -->
+  <rect x="5" y="5" width="40" height="40" rx="8" fill="#3B82F6" opacity="0.1"/>
+  
+  <!-- Main connection symbol -->
+  <g transform="translate(15, 15)">
+    <!-- Central node -->
+    <circle cx="10" cy="10" r="6" fill="#3B82F6"/>
+    
+    <!-- Connection lines -->
+    <line x1="10" y1="4" x2="10" y2="1" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="16" y1="10" x2="19" y2="10" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="10" y1="16" x2="10" y2="19" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    <line x1="4" y1="10" x2="1" y2="10" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Small dots representing platforms -->
+    <circle cx="10" cy="1" r="1.5" fill="#1877F2"/>
+    <circle cx="19" cy="10" r="1.5" fill="#4285F4"/>
+    <circle cx="10" cy="19" r="1.5" fill="#E4405F"/>
+    <circle cx="1" cy="10" r="1.5" fill="#FF6B35"/>
+  </g>
+  
+  <!-- Company name -->
+  <text x="55" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#1F2937">Client</text>
+  <text x="55" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#3B82F6">Fuse</text>
+  
+  <!-- Dot separator -->
+  <circle cx="120" cy="20" r="2" fill="#9CA3AF"/>
+  
+  <!-- Tagline -->
+  <text x="130" y="25" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#6B7280">Unified Access</text>
+</svg>
