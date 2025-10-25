@@ -6,7 +6,7 @@ const integrations = [
   { name: "Google Tag Manager", logo: "/logos/google-tag-manager.svg" },
   { name: "Google Business Profile", logo: "/logos/google-my-business.png" },
   { name: "Google Search Console", logo: "/logos/google-search-console.svg" },
-  { name: "Google Merchant Center", logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" },
+  { name: "Google Merchant Center", logo: "/logos/google-merchant-center.png" },
 ];
 
 export default function Integrations() {
