@@ -11,8 +11,23 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold gradient-text">
-              ClientFuse
+            <a href="/" className="flex items-center gap-3">
+              <svg width="40" height="40" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <g transform="translate(10, 10)">
+                  <circle cx="20" cy="20" r="12" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
+                  <circle cx="20" cy="8" r="6" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+                  <circle cx="8" cy="20" r="6" fill="#3B82F6" stroke="#ffffff" stroke-width="1.5"/>
+                  <circle cx="32" cy="20" r="6" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+                  <circle cx="20" cy="32" r="6" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
+                </g>
+              </svg>
+              <span className="text-2xl font-bold gradient-text">ClientFuse</span>
             </a>
           </div>
 
