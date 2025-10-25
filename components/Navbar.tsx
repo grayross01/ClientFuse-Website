@@ -20,7 +20,7 @@ export default function Navbar() {
                   </linearGradient>
                 </defs>
                 <g transform="translate(10, 10)">
-                  <!-- Four-lobed center shape with deeply concave sides -->
+                  <!-- Center shape with 4 concave cutouts -->
                   <path d="M20 8 C 26 8, 32 8, 32 14 C 32 20, 32 20, 26 20 C 20 20, 20 26, 20 32 C 20 38, 14 38, 8 38 C 2 38, 2 32, 2 26 C 2 20, 2 20, 8 20 C 14 20, 14 14, 14 8 C 14 2, 20 2, 20 8 Z" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
                   
                   <!-- Top circle -->
