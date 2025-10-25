@@ -1,0 +1,31 @@
+<svg width="160" height="40" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Interlocking chain links -->
+  <g transform="translate(8, 8)">
+    <!-- First link -->
+    <path d="M6 4 C 3 4, 3 7, 3 10 C 3 13, 6 13, 9 13 C 12 13, 12 10, 12 7 C 12 4, 9 4, 6 4 Z" 
+          fill="#3B82F6" 
+          stroke="#ffffff" 
+          stroke-width="0.5"/>
+    
+    <!-- Second link (interlocking) -->
+    <path d="M9 7 C 12 7, 12 10, 12 13 C 12 16, 9 16, 6 16 C 3 16, 3 13, 3 10 C 3 7, 6 7, 9 7 Z" 
+          fill="#8B5CF6" 
+          stroke="#ffffff" 
+          stroke-width="0.5"/>
+    
+    <!-- Connection highlight -->
+    <circle cx="9" cy="10" r="1" fill="#ffffff" opacity="0.8"/>
+  </g>
+  
+  <!-- Company name -->
+  <text x="0" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="url(#grad)">ClientFuse</text>
+</svg>
