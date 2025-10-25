@@ -1,12 +1,12 @@
 const integrations = [
   { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" },
   { name: "Instagram", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" },
-  { name: "Google Ads", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Google_Ads_logo.svg" },
+  { name: "Google Ads", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
   { name: "Google Analytics", logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/GAnalytics.svg" },
-  { name: "Google Tag Manager", logo: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Tag_Manager_logo.svg" },
-  { name: "Google Business Profile", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Business_Profile_logo.svg" },
-  { name: "Google Search Console", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Google_Search_Console_logo.svg" },
-  { name: "Google Merchant Center", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Google_Merchant_Center_logo.svg" },
+  { name: "Google Tag Manager", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+  { name: "Google Business Profile", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+  { name: "Google Search Console", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+  { name: "Google Merchant Center", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
 ];
 
 export default function Integrations() {
