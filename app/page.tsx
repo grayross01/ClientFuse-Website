@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import ProblemStatement from "@/components/ProblemStatement";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Integrations from "@/components/Integrations";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <ProblemStatement />
       <Features />
       <HowItWorks />
       <Integrations />
