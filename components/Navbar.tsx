@@ -15,8 +15,8 @@ export default function Navbar() {
               <svg width="40" height="40" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    <stop offset="0%" stopColor="#3B82F6" stopOpacity={1} />
+                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity={1} />
                   </linearGradient>
                 </defs>
                 <g transform="translate(10, 10)">
