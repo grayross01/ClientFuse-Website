@@ -41,7 +41,6 @@ const plans = [
     description: "For established agencies and enterprise partners managing large client portfolios.",
     features: [
       "Connect up to 75 clients per month",
-      "Full white-labeling (custom logo and email)",
       "API access",
       "Dedicated success manager",
     ],
