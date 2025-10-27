@@ -16,8 +16,7 @@ export default function BlogPost() {
         "Excellent API and automation capabilities"
       ],
       cons: [
-        "Pricing can be steep for smaller agencies",
-        "Steeper learning curve for complete feature set"
+        "Pricing can be steep for smaller agencies"
       ],
       pricing: "Starting at $99/month",
       bestFor: "Agencies managing 10+ clients with multiple team members"
