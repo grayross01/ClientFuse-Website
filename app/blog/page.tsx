@@ -3,6 +3,15 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 const blogPosts = [
   {
+    slug: 'top-5-social-media-management-platforms-agencies',
+    title: 'Top 5 Social Media Management Platforms for Marketing Agencies',
+    excerpt: 'A comprehensive review of the best social media management platforms, ranked by their suitability for marketing agencies managing multiple clients.',
+    date: '2024-01-15',
+    readTime: '12 min read',
+    category: 'Tools',
+    featured: true
+  },
+  {
     slug: 'how-to-get-client-access-facebook-ads',
     title: 'How to Get Client Access to Facebook Ads Without the Back-and-Forth',
     excerpt: 'Learn the most effective strategies for getting proper access to your clients\' Facebook Ads accounts, including admin roles, permissions, and common pitfalls to avoid.',
