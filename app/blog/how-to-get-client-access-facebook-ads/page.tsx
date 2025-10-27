@@ -157,10 +157,6 @@ export default function BlogPost() {
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
             </Link>
-            <Link href="/blog/marketing-agency-workflow-tips" className="flex items-center gap-2 text-blue-600 hover:text-blue-700">
-              Next Article
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
