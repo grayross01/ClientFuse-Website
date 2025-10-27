@@ -19,7 +19,7 @@ const features = [
   {
     icon: Palette,
     title: "White-Label Your Brand",
-    description: "Customize everything—logo, colors, fonts, even the URL. Make ClientFuse invisible and showcase your agency's brand.",
+    description: "Customize your logo and colors to make ClientFuse invisible and showcase your agency's brand.",
   },
   {
     icon: BarChart,
