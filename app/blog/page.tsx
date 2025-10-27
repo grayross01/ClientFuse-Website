@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
+// Blog posts listing
 const blogPosts = [
   {
     slug: 'top-5-social-media-management-platforms-agencies',
