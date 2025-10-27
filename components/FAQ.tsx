@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Can I customize the branding?",
-    answer: "Yes! ClientFuse offers white-label options where you can customize your logo, colors, fonts, and even use your own domain. On Agency and Enterprise plans, you can make ClientFuse completely invisible and showcase your agency's brand.",
+    answer: "Yes! ClientFuse offers white-label options where you can customize your logo and colors. On Agency and Enterprise plans, you can make ClientFuse completely invisible and showcase your agency's brand.",
   },
   {
     question: "How quickly will I get access after sending a link?",

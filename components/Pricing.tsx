@@ -26,7 +26,7 @@ const plans = [
     description: "For growing agencies ready to brand their client access experience.",
     features: [
       "Connect up to 20 clients per month",
-      "White-label links (your logo and domain)",
+      "White-label links (your logo)",
       "Multiple team members",
       "Priority support",
     ],
@@ -41,8 +41,8 @@ const plans = [
     description: "For established agencies and enterprise partners managing large client portfolios.",
     features: [
       "Connect up to 75 clients per month",
-      "Full white-labeling (custom domain, logo, and email)",
-      "API + webhook access",
+      "Full white-labeling (custom logo and email)",
+      "API access",
       "Dedicated success manager",
     ],
     cta: "Start Free Trial",
