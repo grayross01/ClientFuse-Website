@@ -10,51 +10,6 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Facebook Ads',
     featured: true
-  },
-  {
-    slug: 'marketing-agency-workflow-tips',
-    title: '5 Marketing Agency Workflow Tips That Will Save You Hours Every Week',
-    excerpt: 'Discover proven workflow strategies that successful marketing agencies use to streamline their processes and improve client satisfaction.',
-    date: '2024-10-23',
-    readTime: '7 min read',
-    category: 'Workflow',
-    featured: true
-  },
-  {
-    slug: 'google-ads-account-management-best-practices',
-    title: 'Google Ads Account Management: Best Practices for Marketing Agencies',
-    excerpt: 'Master the art of managing multiple Google Ads accounts efficiently. Learn about account structures, permissions, and tools that make the job easier.',
-    date: '2024-10-22',
-    readTime: '6 min read',
-    category: 'Google Ads',
-    featured: false
-  },
-  {
-    slug: 'client-onboarding-checklist-marketing-agencies',
-    title: 'The Ultimate Client Onboarding Checklist for Marketing Agencies',
-    excerpt: 'A comprehensive checklist to ensure smooth client onboarding, from initial contact to first campaign launch. Never miss a step again.',
-    date: '2024-10-21',
-    readTime: '8 min read',
-    category: 'Onboarding',
-    featured: false
-  },
-  {
-    slug: 'instagram-business-account-access-guide',
-    title: 'Instagram Business Account Access: A Complete Guide for Agencies',
-    excerpt: 'Everything you need to know about getting proper access to your clients\' Instagram Business accounts, including Meta Business Manager setup.',
-    date: '2024-10-20',
-    readTime: '4 min read',
-    category: 'Instagram',
-    featured: false
-  },
-  {
-    slug: 'marketing-agency-tools-comparison',
-    title: 'Marketing Agency Tools Comparison: Which Ones Actually Save Time?',
-    excerpt: 'Compare the top tools marketing agencies use for client management, account access, and workflow automation. Find out which ones are worth the investment.',
-    date: '2024-10-19',
-    readTime: '9 min read',
-    category: 'Tools',
-    featured: false
   }
 ];
 
