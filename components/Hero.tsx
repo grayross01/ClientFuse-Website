@@ -25,7 +25,7 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <a href="https://app.clientfuse.io/signup" className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group">
+            <a href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group">
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

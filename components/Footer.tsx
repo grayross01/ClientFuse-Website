@@ -30,7 +30,7 @@ export default function Footer() {
               <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               <li><a href="mailto:support@clientfuse.io" className="hover:text-white transition-colors">Support</a></li>
               <li><a href="mailto:sales@clientfuse.io" className="hover:text-white transition-colors">Sales</a></li>
-              <li><a href="https://app.clientfuse.io/signup" className="hover:text-white transition-colors">Sign Up</a></li>
+              <li><a href="https://app.clientfuse.io/auth/login?signup=true" className="hover:text-white transition-colors">Sign Up</a></li>
             </ul>
           </div>
 

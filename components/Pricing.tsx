@@ -138,7 +138,7 @@ export default function Pricing() {
                 </div>
 
                 <a
-                  href={plan.cta === "Contact Sales" ? "mailto:sales@clientfuse.io" : "https://app.clientfuse.io/signup"}
+                  href={plan.cta === "Contact Sales" ? "mailto:sales@clientfuse.io" : "https://app.clientfuse.io/auth/login?signup=true"}
                   className={`block w-full text-center py-3 rounded-lg font-semibold mb-6 transition-all duration-200 ${
                     plan.popular
                       ? "btn-primary text-white"

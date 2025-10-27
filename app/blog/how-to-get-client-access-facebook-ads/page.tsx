@@ -142,7 +142,7 @@ export default function BlogPost() {
             <p className="text-gray-600 mb-4">
               ClientFuse eliminates the back-and-forth by sending one simple link that handles all platform access requests automatically.
             </p>
-            <Link href="https://app.clientfuse.io/signup" className="btn-primary inline-block">
+            <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
               Start Free Trial
             </Link>
           </div>

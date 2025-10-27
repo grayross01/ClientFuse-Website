@@ -266,7 +266,7 @@ export default function BlogPost() {
               <p className="text-gray-700 mb-6">
                 Managing social media accounts is just one part of your client management workflow. ClientFuse simplifies the account access process by sending one simple link that handles all platform access requests automatically—eliminating the back-and-forth emails and complex permission setups.
               </p>
-              <Link href="https://app.clientfuse.io/signup" className="btn-primary inline-block">
+              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
                 Start Free Trial
               </Link>
             </div>

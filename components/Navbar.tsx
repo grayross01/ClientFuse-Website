@@ -50,10 +50,10 @@ export default function Navbar() {
             <a href="#faq" className="text-gray-700 hover:text-gray-900 transition-colors">
               FAQ
             </a>
-            <a href="https://app.clientfuse.io/login" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <a href="https://app.clientfuse.io/auth/login" className="text-gray-700 hover:text-gray-900 transition-colors">
               Log In
             </a>
-            <a href="https://app.clientfuse.io/signup" className="btn-primary">
+            <a href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary">
               Try Free
             </a>
           </div>
@@ -78,8 +78,8 @@ export default function Navbar() {
             <a href="#pricing" className="block text-gray-700 hover:text-gray-900">Pricing</a>
             <a href="/blog" className="block text-gray-700 hover:text-gray-900">Blog</a>
             <a href="#faq" className="block text-gray-700 hover:text-gray-900">FAQ</a>
-            <a href="https://app.clientfuse.io/login" className="block text-gray-700 hover:text-gray-900">Log In</a>
-            <a href="https://app.clientfuse.io/signup" className="block btn-primary text-center">Try Free</a>
+            <a href="https://app.clientfuse.io/auth/login" className="block text-gray-700 hover:text-gray-900">Log In</a>
+            <a href="https://app.clientfuse.io/auth/login?signup=true" className="block btn-primary text-center">Try Free</a>
           </div>
         </div>
       )}
