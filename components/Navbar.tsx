@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
@@ -20,27 +20,17 @@ export default function Navbar() {
                   </linearGradient>
                 </defs>
                 <g transform="translate(10, 10)">
-                  <!-- Central hub circle -->
-                  <circle cx="15" cy="15" r="8" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="2"/>
-                  
-                  <!-- Top circle -->
-                  <circle cx="15" cy="5" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
-                  
-                  <!-- Bottom circle -->
-                  <circle cx="15" cy="25" r="4" fill="#EC4899" stroke="#ffffff" stroke-width="1.5"/>
-                  
-                  <!-- Left circle -->
-                  <circle cx="5" cy="15" r="4" fill="#3B82F6" stroke="#ffffff" stroke-width="1.5"/>
-                  
-                  <!-- Right circle -->
-                  <circle cx="25" cy="15" r="4" fill="#8B5CF6" stroke="#ffffff" stroke-width="1.5"/>
+                  <circle cx="15" cy="15" r="8" fill="url(#centerGradient)" stroke="#ffffff" strokeWidth="2"/>
+                  <circle cx="15" cy="5" r="4" fill="#8B5CF6" stroke="#ffffff" strokeWidth="1.5"/>
+                  <circle cx="15" cy="25" r="4" fill="#EC4899" stroke="#ffffff" strokeWidth="1.5"/>
+                  <circle cx="5" cy="15" r="4" fill="#3B82F6" stroke="#ffffff" strokeWidth="1.5"/>
+                  <circle cx="25" cy="15" r="4" fill="#8B5CF6" stroke="#ffffff" strokeWidth="1.5"/>
                 </g>
               </svg>
               <span className="text-2xl font-bold gradient-text">ClientFuse</span>
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-700 hover:text-gray-900 transition-colors">
               Features
@@ -68,7 +58,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -80,7 +69,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-4 pt-2 pb-4 space-y-3">
@@ -98,4 +86,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
