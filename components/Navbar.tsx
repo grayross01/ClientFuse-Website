@@ -11,24 +11,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3">
-              <div className="flex-shrink-0 flex items-center justify-center">
-                <svg width="48" height="48" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" className="block">
-                <defs>
-                  <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#3B82F6" stopOpacity={1} />
-                    <stop offset="100%" stopColor="#8B5CF6" stopOpacity={1} />
-                  </linearGradient>
-                </defs>
-                <g transform="translate(10, 10)">
-                  <circle cx="15" cy="15" r="8" fill="url(#centerGradient)" stroke="#ffffff" strokeWidth="2"/>
-                  <circle cx="15" cy="5" r="4" fill="#8B5CF6" stroke="#ffffff" strokeWidth="1.5"/>
-                  <circle cx="15" cy="25" r="4" fill="#EC4899" stroke="#ffffff" strokeWidth="1.5"/>
-                  <circle cx="5" cy="15" r="4" fill="#3B82F6" stroke="#ffffff" strokeWidth="1.5"/>
-                  <circle cx="25" cy="15" r="4" fill="#8B5CF6" stroke="#ffffff" strokeWidth="1.5"/>
-                </g>
-              </svg>
-              </div>
+            <a href="/">
               <span className="text-2xl font-bold gradient-text">ClientFuse</span>
             </a>
           </div>
