@@ -12,8 +12,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-3">
-              <div className="flex-shrink-0">
-                <svg width="48" height="48" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex-shrink-0 flex items-center justify-center">
+                <svg width="48" height="48" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" className="block">
                 <defs>
                   <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#3B82F6" stopOpacity={1} />
