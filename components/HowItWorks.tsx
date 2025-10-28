@@ -37,11 +37,6 @@ export default function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              {/* Connector Line (hidden on mobile) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-blue-300 to-purple-300 transform translate-x-4" />
-              )}
-              
               <div className="relative bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-lg transition-all duration-300">
                 {/* Step Number Badge */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
