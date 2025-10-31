@@ -1,0 +1,50 @@
+[
+  {
+    "title": "How Agencies Should Use Cloud Campaign in 2025",
+    "slug": "how-agencies-use-cloud-campaign-2025",
+    "category": "Tools",
+    "links": [
+      { "label": "Cloud Campaign", "url": "https://cloudcampaign.io" },
+      { "label": "Pricing", "url": "https://cloudcampaign.io/pricing" }
+    ]
+  },
+  {
+    "title": "Metricool Analytics: Reporting That Clients Actually Read",
+    "slug": "metricool-analytics-reporting-for-agencies",
+    "category": "Analytics",
+    "links": [
+      { "label": "Metricool", "url": "https://metricool.com" },
+      { "label": "Blog", "url": "https://metricool.com/blog/" }
+    ]
+  },
+  {
+    "title": "SocialPilot vs Vista Social for Small Agency Teams",
+    "slug": "socialpilot-vs-vista-social-for-agencies",
+    "category": "Comparison",
+    "links": [
+      { "label": "SocialPilot", "url": "https://www.socialpilot.co" },
+      { "label": "Vista Social", "url": "https://vistasocial.com" }
+    ]
+  },
+  {
+    "title": "Agorapulse for Client Inbox Management: Setup Guide",
+    "slug": "agorapulse-client-inbox-management-setup",
+    "category": "Guide",
+    "links": [
+      { "label": "Agorapulse", "url": "https://www.agorapulse.com" },
+      { "label": "Help Center", "url": "https://support.agorapulse.com" }
+    ]
+  },
+  {
+    "title": "Weekly Workflow: 7 Tasks That Compound Results",
+    "slug": "weekly-agency-workflow-compounding-results",
+    "category": "Workflow",
+    "links": [
+      { "label": "HubSpot Agency Blog", "url": "https://blog.hubspot.com/marketing/topic/agency" },
+      { "label": "Zapier Guides", "url": "https://zapier.com/blog/" }
+    ]
+  }
+]
+
+
+
