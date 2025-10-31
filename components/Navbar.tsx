@@ -11,8 +11,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <a href="/">
-              <span className="text-2xl font-bold gradient-text">ClientFuse</span>
+            <a href="/" className="flex items-center">
+              <img
+                src="/clientfuse-lockup.svg"
+                alt="ClientFuse"
+                className="h-8 w-auto"
+                loading="eager"
+              />
             </a>
           </div>
 

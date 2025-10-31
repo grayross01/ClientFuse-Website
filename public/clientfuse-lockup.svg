@@ -1,0 +1,34 @@
+<svg width="970" height="200" viewBox="0 0 2000 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="1" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="1" />
+      <stop offset="100%" stop-color="#9333EA" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Icon left (approx 300x300 area) -->
+  <g transform="translate(150,150)">
+    <!-- Four-lobed center shape -->
+    <path d="M150 40 C 195 40, 240 40, 240 85 C 240 130, 240 130, 195 130 C 150 130, 150 175, 150 220 C 150 265, 105 265, 60 265 C 15 265, 15 220, 15 175 C 15 130, 15 130, 60 130 C 105 130, 105 85, 105 40 C 105 -5, 150 -5, 150 40 Z" fill="url(#centerGradient)" stroke="#ffffff" stroke-width="6"/>
+    <!-- Top circle -->
+    <circle cx="150" cy="40" r="35" fill="#8B5CF6" stroke="#ffffff" stroke-width="4"/>
+    <!-- Right circle -->
+    <circle cx="240" cy="130" r="35" fill="#8B5CF6" stroke="#ffffff" stroke-width="4"/>
+    <!-- Bottom circle -->
+    <circle cx="150" cy="220" r="35" fill="#EC4899" stroke="#ffffff" stroke-width="4"/>
+    <!-- Left circle -->
+    <circle cx="60" cy="130" r="35" fill="#3B82F6" stroke="#ffffff" stroke-width="4"/>
+  </g>
+
+  <!-- Text right -->
+  <text x="520" y="330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="220" font-weight="700" fill="url(#textGradient)" letter-spacing="-4">ClientFuse</text>
+</svg>
+
+
+
+
+
