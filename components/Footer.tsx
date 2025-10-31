@@ -44,10 +44,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-sm text-gray-500 text-center">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} ClientFuse. All rights reserved.
           </p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="https://www.facebook.com/clientfuse" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors text-sm">Facebook</a>
+          </div>
         </div>
       </div>
     </footer>
