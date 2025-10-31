@@ -12,6 +12,16 @@ export const metadata: Metadata = {
   creator: "ClientFuse",
   publisher: "ClientFuse",
   robots: "index, follow",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" },
+      { url: "/favicon-48x48.svg", sizes: "48x48", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/favicon-48x48.svg", sizes: "48x48" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -76,11 +86,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=7" />
-        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg?v=7" />
-        <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg?v=7" />
-        <link rel="apple-touch-icon" href="/favicon-48x48.svg?v=7" />
+        {/* Favicon - Multiple formats for better Google compatibility */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=9" />
+        <link rel="icon" type="image/svg+xml" sizes="16x16" href="/favicon-16x16.svg?v=9" />
+        <link rel="icon" type="image/svg+xml" sizes="48x48" href="/favicon-48x48.svg?v=9" />
+        <link rel="apple-touch-icon" href="/favicon-48x48.svg?v=9" />
+        {/* Ensure favicon is accessible at root for Google */}
+        <link rel="shortcut icon" href="/favicon.svg?v=9" />
         
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZNV0WEVZS"></script>
