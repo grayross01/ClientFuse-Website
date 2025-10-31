@@ -13,9 +13,11 @@ export default function Navbar() {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img
-                src="/combined_logo.svg"
+                src="/combined_logo.png"
                 alt="ClientFuse"
                 className="h-8 w-auto"
+                width="194"
+                height="40"
                 loading="eager"
               />
             </a>
