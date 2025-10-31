@@ -63,6 +63,8 @@ export default function RootLayout({
     "name": "ClientFuse",
     "description": "The easiest way to get access to your client accounts. Send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.",
     "url": "https://clientfuse.io",
+    "logo": "https://clientfuse.io/combined_logo.png",
+    "image": "https://clientfuse.io/combined_logo.png",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -109,6 +111,19 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "ClientFuse",
+            "url": "https://clientfuse.io",
+            "logo": "https://clientfuse.io/combined_logo.png",
+            "sameAs": [
+              "https://www.facebook.com/clientfuse"
+            ]
+          }) }}
         />
       </head>
       <body className={inter.className}>{children}</body>
