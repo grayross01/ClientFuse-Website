@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import NewsletterForm from '@/components/NewsletterForm';
 
 // Blog posts listing
 const blogPosts = [
@@ -131,22 +132,7 @@ export default function Blog() {
       {/* Newsletter Signup */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Stay Updated</h2>
-            <p className="text-gray-600 mb-6">
-              Get the latest marketing agency tips, industry insights, and ClientFuse updates delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-              <button className="btn-primary px-6 py-3 whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
     </div>
