@@ -33,13 +33,12 @@ export default function BlogPost() {
             A practical, agency-focused walkthrough with actionable steps.
           </p>
 
-          <h2>Useful Links</h2>
-          <p>Resources referenced in this article:</p>
-          <div>
-{            }
-            - [HubSpot Agency Blog](https://blog.hubspot.com/marketing/topic/agency)
-            - [Zapier Guides](https://zapier.com/blog/)
-          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Useful Links</h2>
+          <p className="text-gray-600 mb-4">Resources referenced in this article:</p>
+          <ul className="list-disc list-inside space-y-2 mb-8">
+            <li><a href="https://blog.hubspot.com/marketing/topic/agency" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">HubSpot Agency Blog</a></li>
+            <li><a href="https://zapier.com/blog/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">Zapier Guides</a></li>
+          </ul>
 
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 border border-blue-100 my-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Streamline Client Access</h3>

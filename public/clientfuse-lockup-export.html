@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ClientFuse Lockup Export</title>
+  <style>
+    body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #f8fafc; }
+    .wrap { max-width: 900px; margin: 0 auto; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(0,0,0,.05); }
+    .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+    label { font-size: 14px; color: #334155; }
+    input { padding: 8px 10px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; width: 120px; }
+    button { padding: 10px 14px; border: 0; border-radius: 10px; background: linear-gradient(90deg,#2563EB,#9333EA); color: #fff; font-weight: 600; cursor: pointer; }
+    canvas { width: 100%; height: auto; background: transparent; display: block; border: 1px dashed #e5e7eb; border-radius: 12px; }
+    .hint { color:#64748b; font-size: 13px; margin-top: 8px; }
+  </style>
+  </head>
+<body>
+  <div class="wrap">
+    <canvas id="c" width="2000" height="600"></canvas>
+    <div class="controls">
+      <label>Width <input id="w" type="number" value="2000" min="400" step="100" /></label>
+      <label>Height <input id="h" type="number" value="600" min="200" step="50" /></label>
+      <label>Icon size <input id="is" type="number" value="300" min="100" step="10" /></label>
+      <label>Text size <input id="ts" type="number" value="220" min="40" step="5" /></label>
+      <button id="dl">Download PNG (transparent)</button>
+    </div>
+    <div class="hint">Left icon with blue→purple gradient and four nodes, right "ClientFuse" gradient text. Background is transparent.</div>
+  </div>
+
+  <script>
+    const c = document.getElementById('c');
+    const ctx = c.getContext('2d');
+    const blue = '#3B82F6';
+    const purple = '#8B5CF6';
+    const pink = '#EC4899';
+    const textFrom = '#2563EB';
+    const textTo = '#9333EA';
+
+    function draw() {
+      const W = c.width = parseInt(document.getElementById('w').value, 10);
+      const H = c.height = parseInt(document.getElementById('h').value, 10);
+      const iconSize = parseInt(document.getElementById('is').value, 10);
+      const textSize = parseInt(document.getElementById('ts').value, 10);
+
+      ctx.clearRect(0,0,W,H);
+
+      // Icon origin
+      const ix = Math.round(W * 0.12);
+      const iy = Math.round(H * 0.18);
+
+      // Center shape path
+      ctx.save();
+      const grad = ctx.createLinearGradient(0,0,iconSize,iconSize);
+      grad.addColorStop(0, blue);
+      grad.addColorStop(1, purple);
+      ctx.fillStyle = grad;
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = Math.max(2, iconSize * 0.02);
+      ctx.beginPath();
+      const sx = ix + iconSize * 0.5;
+      const sy = iy + iconSize * 0.13;
+      // Approximate four-lobed shape
+      ctx.moveTo(sx, sy);
+      ctx.bezierCurveTo(sx + iconSize*0.3, sy, ix + iconSize*0.8, sy, ix + iconSize*0.8, iy + iconSize*0.28);
+      ctx.bezierCurveTo(ix + iconSize*0.8, iy + iconSize*0.43, ix + iconSize*0.8, iy + iconSize*0.43, ix + iconSize*0.65, iy + iconSize*0.43);
+      ctx.bezierCurveTo(ix + iconSize*0.5, iy + iconSize*0.43, ix + iconSize*0.5, iy + iconSize*0.58, ix + iconSize*0.5, iy + iconSize*0.73);
+      ctx.bezierCurveTo(ix + iconSize*0.5, iy + iconSize*0.88, ix + iconSize*0.35, iy + iconSize*0.88, ix + iconSize*0.2, iy + iconSize*0.88);
+      ctx.bezierCurveTo(ix + iconSize*0.05, iy + iconSize*0.88, ix + iconSize*0.05, iy + iconSize*0.73, ix + iconSize*0.05, iy + iconSize*0.58);
+      ctx.bezierCurveTo(ix + iconSize*0.05, iy + iconSize*0.43, ix + iconSize*0.05, iy + iconSize*0.43, ix + iconSize*0.2, iy + iconSize*0.43);
+      ctx.bezierCurveTo(ix + iconSize*0.35, iy + iconSize*0.43, ix + iconSize*0.35, iy + iconSize*0.28, ix + iconSize*0.35, iy + iconSize*0.13);
+      ctx.bezierCurveTo(ix + iconSize*0.35, iy - iconSize*0.02, sx, iy - iconSize*0.02, sx, sy);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      // Nodes
+      const r = iconSize * 0.175;
+      function node(x, y, color){
+        ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.closePath();
+        ctx.fillStyle = color; ctx.fill(); ctx.stroke();
+      }
+      node(ix + iconSize*0.5, iy + iconSize*0.13, purple);  // top
+      node(ix + iconSize*0.8, iy + iconSize*0.43, purple);  // right
+      node(ix + iconSize*0.5, iy + iconSize*0.73, '#EC4899'); // bottom
+      node(ix + iconSize*0.2, iy + iconSize*0.43, blue);     // left
+      ctx.restore();
+
+      // Text
+      const tx = ix + iconSize + Math.max(40, iconSize * 0.25);
+      const ty = Math.round(H * 0.55);
+      const tgrad = ctx.createLinearGradient(tx, 0, tx + iconSize, 0);
+      tgrad.addColorStop(0, textFrom);
+      tgrad.addColorStop(1, textTo);
+      ctx.fillStyle = tgrad;
+      ctx.font = `bold ${textSize}px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif`;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('ClientFuse', tx, ty);
+    }
+
+    draw();
+    document.querySelectorAll('#w,#h,#is,#ts').forEach(el => el.addEventListener('input', draw));
+
+    document.getElementById('dl').addEventListener('click', () => {
+      c.toBlob((blob) => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `clientfuse-lockup-${c.width}x${c.height}.png`;
+        document.body.appendChild(a); a.click(); a.remove();
+      }, 'image/png');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -20,6 +20,51 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Facebook Ads',
     featured: true
+  },
+  {
+    slug: 'how-agencies-use-cloud-campaign-2025',
+    title: 'How Agencies Should Use Cloud Campaign in 2025',
+    excerpt: 'A practical, agency-focused walkthrough with actionable steps for leveraging Cloud Campaign to streamline your social media workflow.',
+    date: '2024-11-20',
+    readTime: '6 min read',
+    category: 'Tools',
+    featured: false
+  },
+  {
+    slug: 'metricool-analytics-reporting-for-agencies',
+    title: 'Metricool Analytics: Reporting That Clients Actually Read',
+    excerpt: 'Learn how to create compelling analytics reports with Metricool that impress clients and demonstrate real value.',
+    date: '2024-11-24',
+    readTime: '6 min read',
+    category: 'Analytics',
+    featured: false
+  },
+  {
+    slug: 'socialpilot-vs-vista-social-for-agencies',
+    title: 'SocialPilot vs Vista Social for Small Agency Teams',
+    excerpt: 'A head-to-head comparison of two popular social media management tools for agencies with smaller teams.',
+    date: '2024-11-27',
+    readTime: '6 min read',
+    category: 'Comparison',
+    featured: false
+  },
+  {
+    slug: 'agorapulse-client-inbox-management-setup',
+    title: 'Agorapulse for Client Inbox Management: Setup Guide',
+    excerpt: 'Step-by-step guide to setting up Agorapulse for efficient client inbox management across multiple accounts.',
+    date: '2024-11-28',
+    readTime: '6 min read',
+    category: 'Guide',
+    featured: false
+  },
+  {
+    slug: 'weekly-agency-workflow-compounding-results',
+    title: 'Weekly Workflow: 7 Tasks That Compound Results',
+    excerpt: 'Discover the seven weekly tasks that compound over time to deliver exceptional results for your agency clients.',
+    date: '2024-11-29',
+    readTime: '6 min read',
+    category: 'Workflow',
+    featured: false
   }
 ];
 

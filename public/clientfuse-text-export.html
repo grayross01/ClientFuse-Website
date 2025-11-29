@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Export ClientFuse Text PNG</title>
+  <style>
+    body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #f7f7fb; }
+    .card { max-width: 720px; margin: 0 auto; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(0,0,0,0.05);} 
+    .preview { display: flex; align-items: center; justify-content: center; height: 200px; border: 1px dashed #e5e7eb; border-radius: 12px; background: conic-gradient(from 180deg at 50% 50%, #ffffff, #fbfbff, #ffffff); margin-bottom: 16px; }
+    .controls { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    label { font-size: 14px; color: #374151; }
+    input { padding: 8px 10px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; width: 110px; }
+    button { padding: 10px 14px; border: 0; border-radius: 10px; background: linear-gradient(90deg, #2563EB, #9333EA); color: #fff; font-weight: 600; cursor: pointer; }
+    .hint { font-size: 13px; color: #6b7280; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="preview">
+      <canvas id="previewCanvas" width="800" height="200"></canvas>
+    </div>
+    <div class="controls">
+      <label>Width (px) <input id="width" type="number" value="2400" min="400" step="100" /></label>
+      <label>Height (px) <input id="height" type="number" value="600" min="100" step="50" /></label>
+      <label>Font size (px) <input id="fontSize" type="number" value="360" min="24" step="8" /></label>
+      <button id="download">Download PNG (transparent)</button>
+    </div>
+    <div class="hint">Uses the site gradient (blue #2563EB → purple #9333EA). Background is transparent.</div>
+  </div>
+
+  <script>
+    const text = 'ClientFuse';
+    const gradientFrom = '#2563EB';
+    const gradientTo = '#9333EA';
+
+    const previewCanvas = document.getElementById('previewCanvas');
+    const pctx = previewCanvas.getContext('2d');
+
+    function drawPreview() {
+      pctx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+      pctx.save();
+      pctx.font = 'bold 120px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+      pctx.textAlign = 'center';
+      pctx.textBaseline = 'middle';
+      const grad = pctx.createLinearGradient(0, 0, previewCanvas.width, 0);
+      grad.addColorStop(0, gradientFrom);
+      grad.addColorStop(1, gradientTo);
+      pctx.fillStyle = grad;
+      pctx.fillText(text, previewCanvas.width / 2, previewCanvas.height / 2);
+      pctx.restore();
+    }
+
+    drawPreview();
+
+    document.getElementById('download').addEventListener('click', () => {
+      const width = parseInt(document.getElementById('width').value, 10) || 2400;
+      const height = parseInt(document.getElementById('height').value, 10) || 600;
+      const fontSize = parseInt(document.getElementById('fontSize').value, 10) || 360;
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+
+      // Transparent background by default
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.save();
+      ctx.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const grad = ctx.createLinearGradient(0, 0, width, 0);
+      grad.addColorStop(0, gradientFrom);
+      grad.addColorStop(1, gradientTo);
+      ctx.fillStyle = grad;
+      ctx.fillText(text, width / 2, height / 2);
+      ctx.restore();
+
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `clientfuse-text-${width}x${height}.png`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
