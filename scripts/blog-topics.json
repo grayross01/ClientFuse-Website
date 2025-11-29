@@ -1,50 +1,323 @@
 [
   {
-    "title": "How Agencies Should Use Cloud Campaign in 2025",
-    "slug": "how-agencies-use-cloud-campaign-2025",
-    "category": "Tools",
+    "title": "The Complete Guide to Client Onboarding for Marketing Agencies",
+    "slug": "complete-guide-client-onboarding-marketing-agencies",
+    "category": "Client Management",
+    "summary": "A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.",
+    "sections": [
+      {
+        "heading": "Why Client Onboarding Matters",
+        "content": "The first 30 days of a client relationship set the tone for everything that follows. A smooth onboarding process reduces churn, builds trust, and establishes clear communication patterns. Studies show that agencies with structured onboarding retain clients 40% longer than those without."
+      },
+      {
+        "heading": "Step 1: The Kick-Off Call",
+        "content": "Schedule a dedicated kick-off call within the first week of signing. Use this time to align on goals, introduce team members, and establish communication preferences. Document everything discussed and share a summary afterward. This creates accountability and ensures everyone starts on the same page."
+      },
+      {
+        "heading": "Step 2: Gathering Account Access",
+        "content": "One of the biggest friction points in onboarding is getting access to client accounts. Create a standardized checklist of all platforms you'll need access to: Google Ads, Facebook Business Manager, Google Analytics, and more. Use a secure access management tool to streamline this process and avoid the back-and-forth emails that delay projects."
+      },
+      {
+        "heading": "Step 3: Audit and Discovery",
+        "content": "Before launching any campaigns, conduct a thorough audit of existing assets. Review past performance data, identify quick wins, and document areas for improvement. This audit becomes the foundation for your strategy and helps demonstrate value early in the relationship."
+      },
+      {
+        "heading": "Step 4: Setting Milestones",
+        "content": "Break the first 90 days into clear milestones. Week 1: Access and audit. Week 2-3: Strategy development. Week 4: Campaign launch. Month 2-3: Optimization and reporting. When clients can see a clear roadmap, they feel more confident in your process."
+      }
+    ],
     "links": [
-      { "label": "Cloud Campaign", "url": "https://cloudcampaign.io" },
-      { "label": "Pricing", "url": "https://cloudcampaign.io/pricing" }
+      { "label": "HubSpot Agency Partner Program", "url": "https://www.hubspot.com/partners/agency" },
+      { "label": "Agency Management Institute", "url": "https://agencymanagementinstitute.com" }
     ]
   },
   {
-    "title": "Metricool Analytics: Reporting That Clients Actually Read",
-    "slug": "metricool-analytics-reporting-for-agencies",
-    "category": "Analytics",
+    "title": "How to Price Your Marketing Agency Services in 2025",
+    "slug": "how-to-price-marketing-agency-services-2025",
+    "category": "Agency Growth",
+    "summary": "A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.",
+    "sections": [
+      {
+        "heading": "The Pricing Dilemma",
+        "content": "Pricing is one of the hardest decisions agency owners face. Price too low and you burn out your team while struggling to stay profitable. Price too high and you lose deals to competitors. The key is understanding your true costs and the value you deliver."
+      },
+      {
+        "heading": "Understanding Your Costs",
+        "content": "Before setting prices, calculate your fully-loaded costs. This includes salaries, benefits, software subscriptions, overhead, and a profit margin. Most agencies aim for a 50-60% gross margin on services. If your blended team cost is $75/hour, you should be billing at least $150/hour to maintain healthy margins."
+      },
+      {
+        "heading": "Retainer vs Project-Based Pricing",
+        "content": "Retainers provide predictable revenue and allow for deeper client relationships. Project-based pricing works better for one-time deliverables or clients testing the waters. Many agencies use a hybrid model: project-based for new clients, transitioning to retainers after proving value."
+      },
+      {
+        "heading": "Value-Based Pricing",
+        "content": "The most profitable agencies price based on value, not hours. If your campaign generates $100,000 in revenue for a client, charging $5,000 per month is a bargain regardless of hours worked. Position your pricing around ROI and outcomes, not inputs."
+      },
+      {
+        "heading": "When to Raise Your Rates",
+        "content": "Raise rates when you're at capacity, when you've added new capabilities, or at annual renewals. Give clients 30-60 days notice and frame increases around the additional value you're providing. Most clients expect modest annual increases and won't push back on 5-10% adjustments."
+      }
+    ],
     "links": [
-      { "label": "Metricool", "url": "https://metricool.com" },
-      { "label": "Blog", "url": "https://metricool.com/blog/" }
+      { "label": "Promethean Research - Agency Benchmarks", "url": "https://prometheanresearch.com" },
+      { "label": "Agency Analytics Pricing Guide", "url": "https://agencyanalytics.com/blog/marketing-agency-pricing" }
     ]
   },
   {
-    "title": "SocialPilot vs Vista Social for Small Agency Teams",
-    "slug": "socialpilot-vs-vista-social-for-agencies",
-    "category": "Comparison",
+    "title": "Google Ads Account Structure Best Practices for Agencies",
+    "slug": "google-ads-account-structure-best-practices-agencies",
+    "category": "Google Ads",
+    "summary": "How to structure Google Ads accounts for maximum performance, easy management, and clear reporting across multiple clients.",
+    "sections": [
+      {
+        "heading": "Why Structure Matters",
+        "content": "A well-organized Google Ads account is easier to manage, performs better, and provides clearer insights. Poor structure leads to wasted spend, conflicting keywords, and reporting nightmares. Taking time to build the right foundation saves countless hours down the road."
+      },
+      {
+        "heading": "Campaign Organization",
+        "content": "Organize campaigns by objective first: Brand, Non-Brand, Competitor, Remarketing. Within each, segment by product line or service category. This structure allows for precise budget allocation and makes performance analysis straightforward. Avoid the temptation to create too many campaigns—complexity is the enemy of optimization."
+      },
+      {
+        "heading": "Ad Group Best Practices",
+        "content": "Keep ad groups tightly themed with 10-20 closely related keywords each. This improves Quality Scores and allows for highly relevant ad copy. Use Single Keyword Ad Groups (SKAGs) sparingly for your highest-value terms, but don't over-engineer—the algorithm has gotten smarter."
+      },
+      {
+        "heading": "Naming Conventions",
+        "content": "Establish consistent naming conventions across all client accounts. A format like [Campaign Type] | [Product/Service] | [Targeting] makes filtering and reporting effortless. Example: Search | Running Shoes | Non-Brand. Document your conventions and enforce them religiously."
+      },
+      {
+        "heading": "Using Labels and Scripts",
+        "content": "Labels are your secret weapon for cross-cutting analysis. Tag campaigns by launch date, test status, or performance tier. Combine with Google Ads scripts to automate reporting and catch issues before they become problems. This scales your ability to manage more accounts without adding headcount."
+      }
+    ],
     "links": [
-      { "label": "SocialPilot", "url": "https://www.socialpilot.co" },
-      { "label": "Vista Social", "url": "https://vistasocial.com" }
+      { "label": "Google Ads Help Center", "url": "https://support.google.com/google-ads" },
+      { "label": "Google Skillshop", "url": "https://skillshop.withgoogle.com" }
     ]
   },
   {
-    "title": "Agorapulse for Client Inbox Management: Setup Guide",
-    "slug": "agorapulse-client-inbox-management-setup",
-    "category": "Guide",
+    "title": "Building a Repeatable Client Reporting System",
+    "slug": "building-repeatable-client-reporting-system",
+    "category": "Operations",
+    "summary": "How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.",
+    "sections": [
+      {
+        "heading": "The Reporting Problem",
+        "content": "Most agency reports are too long, too technical, and never read. Clients receive a 20-page PDF, skim the first page, and file it away. Meanwhile, your team spent hours compiling data that didn't drive any decisions. It's time to rethink reporting entirely."
+      },
+      {
+        "heading": "Start with What Clients Care About",
+        "content": "Every report should answer three questions: What did we do? What happened? What's next? Lead with business outcomes (revenue, leads, conversions) not vanity metrics (impressions, clicks). If you can't connect a metric to business impact, leave it out."
+      },
+      {
+        "heading": "Automate Data Collection",
+        "content": "Stop manually pulling data from multiple platforms. Tools like Google Looker Studio, Supermetrics, or AgencyAnalytics can automatically aggregate data across channels. Set up once and your reports populate automatically. This frees your team to focus on insights, not data entry."
+      },
+      {
+        "heading": "The Executive Summary",
+        "content": "Every report needs a one-paragraph executive summary at the top. Write it for the CEO who has 30 seconds. What's the headline? What should they know? What action is needed? If they read nothing else, this paragraph should give them confidence in your work."
+      },
+      {
+        "heading": "Making Reports a Conversation",
+        "content": "Don't just send reports—present them. A 15-minute call to walk through key findings creates more value than any PDF. Use screen sharing to show live data. Answer questions in real-time. This touchpoint reinforces the relationship and surfaces insights that wouldn't come up otherwise."
+      }
+    ],
     "links": [
-      { "label": "Agorapulse", "url": "https://www.agorapulse.com" },
-      { "label": "Help Center", "url": "https://support.agorapulse.com" }
+      { "label": "Google Looker Studio", "url": "https://lookerstudio.google.com" },
+      { "label": "Agency Analytics", "url": "https://agencyanalytics.com" }
     ]
   },
   {
-    "title": "Weekly Workflow: 7 Tasks That Compound Results",
-    "slug": "weekly-agency-workflow-compounding-results",
-    "category": "Workflow",
+    "title": "Managing Remote Marketing Teams: Lessons from Leading Agencies",
+    "slug": "managing-remote-marketing-teams-leading-agencies",
+    "category": "Team Management",
+    "summary": "Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.",
+    "sections": [
+      {
+        "heading": "The Remote Agency Advantage",
+        "content": "Remote work isn't just a perk—it's a competitive advantage. Access to global talent, reduced overhead, and improved work-life balance lead to better retention and output. The agencies thriving today have embraced remote work deliberately, not just as a pandemic response."
+      },
+      {
+        "heading": "Async-First Communication",
+        "content": "The biggest mistake remote teams make is trying to replicate office culture online. Endless Zoom calls and constant Slack pings destroy productivity. Adopt async-first communication: document decisions in writing, record video updates instead of scheduling meetings, and respect focus time."
+      },
+      {
+        "heading": "Building Culture Intentionally",
+        "content": "Culture doesn't happen by accident in remote teams. Schedule regular virtual social events, create channels for non-work conversation, and invest in occasional in-person gatherings. Celebrate wins publicly. Recognize that building relationships takes more effort when you can't grab coffee together."
+      },
+      {
+        "heading": "Tools and Systems",
+        "content": "Your tech stack is your office. Invest in the right tools: project management (Asana, Monday, ClickUp), communication (Slack, Loom), documentation (Notion, Confluence), and time tracking if needed. Standardize on tools and train the team thoroughly—tool sprawl creates chaos."
+      },
+      {
+        "heading": "Measuring Output, Not Hours",
+        "content": "Remote work requires shifting from measuring presence to measuring output. Define clear deliverables and deadlines. Trust people to manage their time. If someone consistently delivers great work, does it matter if they took a midday break for a workout? Focus on results."
+      }
+    ],
     "links": [
-      { "label": "HubSpot Agency Blog", "url": "https://blog.hubspot.com/marketing/topic/agency" },
-      { "label": "Zapier Guides", "url": "https://zapier.com/blog/" }
+      { "label": "Remote.co - Remote Work Resources", "url": "https://remote.co" },
+      { "label": "Basecamp's Remote Work Guide", "url": "https://basecamp.com/guides/how-we-communicate" }
+    ]
+  },
+  {
+    "title": "Facebook Ads for E-commerce: Agency Playbook",
+    "slug": "facebook-ads-ecommerce-agency-playbook",
+    "category": "Facebook Ads",
+    "summary": "Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.",
+    "sections": [
+      {
+        "heading": "The New Facebook Ads Landscape",
+        "content": "iOS 14 changed everything. Attribution is murkier, audiences are smaller, and CPMs have increased. But Facebook and Instagram remain powerful channels for e-commerce. Success now requires adapting strategies: broader targeting, better creative, and diversified measurement."
+      },
+      {
+        "heading": "Creative is the New Targeting",
+        "content": "With audience targeting less precise, creative does the heavy lifting. The algorithm finds your audience through engagement signals. This means you need more creative variations, faster testing cycles, and a relentless focus on thumb-stopping content. Plan for 20-30 new creatives per month per client."
+      },
+      {
+        "heading": "Campaign Structure for Scale",
+        "content": "Consolidate campaigns to give the algorithm more data. A proven structure: one Advantage+ Shopping campaign for broad prospecting, one retargeting campaign with recent site visitors, and one for existing customers. Resist the urge to segment by interest—let the machine learning do its job."
+      },
+      {
+        "heading": "Measurement and Attribution",
+        "content": "Don't rely solely on Facebook's reported ROAS. Implement server-side tracking with Conversions API. Use incrementality testing to measure true lift. Cross-reference with Google Analytics and backend sales data. The truth usually lies somewhere between platforms."
+      },
+      {
+        "heading": "Scaling Profitably",
+        "content": "Scale gradually—20% budget increases every 3-4 days if performance holds. Watch for creative fatigue; frequency above 2-3 usually indicates it's time for fresh creative. Expand to new placements (Reels, Stories) before pushing more spend through saturated placements."
+      }
+    ],
+    "links": [
+      { "label": "Meta Business Help Center", "url": "https://www.facebook.com/business/help" },
+      { "label": "Jon Loomer Digital - Advanced Facebook Ads", "url": "https://www.jonloomer.com" }
+    ]
+  },
+  {
+    "title": "How to Fire a Client (And When You Should)",
+    "slug": "how-to-fire-client-when-you-should",
+    "category": "Client Management",
+    "summary": "Knowing when to end a client relationship is as important as winning new business. Here's how to do it professionally.",
+    "sections": [
+      {
+        "heading": "The Hidden Cost of Bad Clients",
+        "content": "Bad clients don't just drain time—they drain morale. Your best employees don't want to work on nightmare accounts. One toxic client can trigger turnover that costs far more than their revenue. Sometimes the most profitable decision is walking away."
+      },
+      {
+        "heading": "Red Flags to Watch For",
+        "content": "Chronic late payments, scope creep without budget increases, disrespecting your team, ignoring recommendations then blaming you for results—these are all warning signs. Track these issues. If a pattern emerges over 3-6 months, it's time for a serious conversation or an exit."
+      },
+      {
+        "heading": "The Conversation Before Firing",
+        "content": "Before ending the relationship, have a candid conversation. Sometimes issues can be resolved with clearer boundaries or a scope adjustment. Document this conversation. If nothing changes in 30 days, you've done your due diligence and can move forward with a clear conscience."
+      },
+      {
+        "heading": "How to Exit Gracefully",
+        "content": "Give appropriate notice—typically 30-60 days. Offer to help transition to another agency. Provide thorough documentation of account access, campaign history, and learnings. Never badmouth the client publicly. Your reputation matters more than one difficult exit."
+      },
+      {
+        "heading": "Filling the Revenue Gap",
+        "content": "Before firing a client, ideally have pipeline to replace the revenue. If not, use the freed capacity to pursue better opportunities. You'd be surprised how quickly the right clients appear when you're not consumed by the wrong ones. Quality over quantity always wins."
+      }
+    ],
+    "links": [
+      { "label": "Agency Management Institute", "url": "https://agencymanagementinstitute.com" },
+      { "label": "Fuel Lines - Agency Growth Blog", "url": "https://fuellines.com/blog" }
+    ]
+  },
+  {
+    "title": "SEO Fundamentals Every Agency Should Master",
+    "slug": "seo-fundamentals-every-agency-should-master",
+    "category": "SEO",
+    "summary": "Core SEO principles that drive organic growth, regardless of algorithm updates or industry changes.",
+    "sections": [
+      {
+        "heading": "SEO is a Long Game",
+        "content": "Set expectations early: SEO takes 4-6 months to show meaningful results. Quick wins exist, but sustainable organic growth requires patience. Clients who understand this timeline become better partners. Those who expect overnight results are better served by paid channels."
+      },
+      {
+        "heading": "Technical Foundation First",
+        "content": "Before chasing rankings, ensure the technical foundation is solid. Site speed, mobile responsiveness, crawlability, and proper indexation are prerequisites. Use tools like Screaming Frog and Google Search Console to identify and fix technical issues. A technically sound site has a fighting chance."
+      },
+      {
+        "heading": "Content That Ranks and Converts",
+        "content": "Create content for users first, search engines second. Answer real questions your audience has. Go deeper than competitors—if they have 1,000 words, write 2,000 with better examples and data. Update existing content regularly; freshness matters for competitive terms."
+      },
+      {
+        "heading": "Link Building in 2025",
+        "content": "Quality over quantity is more true than ever for backlinks. One link from a relevant, authoritative site beats 100 spammy directory links. Focus on digital PR, original research, and creating genuinely linkable assets. Avoid schemes that could trigger penalties."
+      },
+      {
+        "heading": "Measuring SEO Success",
+        "content": "Track rankings, but focus on traffic and conversions. A #1 ranking that doesn't drive business is worthless. Set up proper conversion tracking, segment organic traffic in analytics, and report on metrics that matter to the business, not just SEO vanity metrics."
+      }
+    ],
+    "links": [
+      { "label": "Moz - SEO Learning Center", "url": "https://moz.com/learn/seo" },
+      { "label": "Ahrefs Blog", "url": "https://ahrefs.com/blog" },
+      { "label": "Google Search Central", "url": "https://developers.google.com/search" }
+    ]
+  },
+  {
+    "title": "Winning Agency Proposals: Templates and Strategies",
+    "slug": "winning-agency-proposals-templates-strategies",
+    "category": "Sales",
+    "summary": "How to write proposals that close deals, avoid common pitfalls, and stand out from competing agencies.",
+    "sections": [
+      {
+        "heading": "The Purpose of a Proposal",
+        "content": "A proposal isn't a contract or a scope of work—it's a sales document. Its job is to convince the prospect to say yes. Everything in the proposal should move toward that goal. If it doesn't help close the deal, leave it out."
+      },
+      {
+        "heading": "Structure That Sells",
+        "content": "Start with their problem, not your capabilities. Show you understand their situation deeply. Then present your approach as the solution. Include case studies from similar clients. End with clear pricing and next steps. Keep it under 10 pages—nobody reads 50-page proposals."
+      },
+      {
+        "heading": "Pricing Presentation",
+        "content": "Present 2-3 options when possible. This shifts the conversation from 'yes or no' to 'which one.' Anchor with the premium option first, then show the standard package. Include ROI projections to reframe cost as investment. Never apologize for your pricing."
+      },
+      {
+        "heading": "Common Proposal Mistakes",
+        "content": "Talking too much about yourself instead of the client. Including jargon they don't understand. Burying the price. Not having a clear call to action. Sending a PDF when an interactive presentation would be better. Taking too long to deliver—speed demonstrates responsiveness."
+      },
+      {
+        "heading": "Following Up",
+        "content": "The proposal isn't the end—it's the beginning. Schedule a presentation call to walk through it live. Answer questions in real-time. If you don't hear back, follow up at 2 days, 5 days, and 10 days. Most deals are won or lost in the follow-up."
+      }
+    ],
+    "links": [
+      { "label": "Proposify - Proposal Software", "url": "https://www.proposify.com" },
+      { "label": "Better Proposals", "url": "https://betterproposals.io" }
+    ]
+  },
+  {
+    "title": "LinkedIn Ads for B2B Lead Generation: A Complete Guide",
+    "slug": "linkedin-ads-b2b-lead-generation-complete-guide",
+    "category": "LinkedIn Ads",
+    "summary": "How to run profitable LinkedIn advertising campaigns for B2B clients, from targeting to creative to conversion.",
+    "sections": [
+      {
+        "heading": "Why LinkedIn for B2B",
+        "content": "LinkedIn is the most powerful B2B advertising platform. Nowhere else can you target by job title, company size, industry, and seniority with such precision. Yes, CPMs are higher than Facebook—but the quality of leads often justifies the premium for B2B clients."
+      },
+      {
+        "heading": "Targeting Strategy",
+        "content": "Start narrow and expand. Target specific job titles at companies in your ICP. Layer on company size and industry. Use matched audiences for retargeting and ABM campaigns. Avoid targeting by skills or groups—these audiences are too broad and often irrelevant."
+      },
+      {
+        "heading": "Ad Formats That Work",
+        "content": "Sponsored Content performs best for most objectives. Single image ads with clear value propositions outperform complex carousels. Lead Gen Forms reduce friction significantly—use them when lead quality isn't a concern. Video ads build awareness but rarely drive direct conversions."
+      },
+      {
+        "heading": "The Content-to-Conversion Path",
+        "content": "LinkedIn users aren't ready to buy immediately. Build a funnel: Thought leadership content → Gated asset (ebook, webinar) → Product demo. Each stage warms the audience for the next. Expect a longer sales cycle than consumer advertising."
+      },
+      {
+        "heading": "Budgeting and Optimization",
+        "content": "LinkedIn requires meaningful budgets—plan for $3,000/month minimum to gather useful data. Start with manual CPC bidding, then transition to automated bidding once you have conversion data. Refresh creative every 4-6 weeks to combat frequency fatigue."
+      }
+    ],
+    "links": [
+      { "label": "LinkedIn Marketing Solutions", "url": "https://business.linkedin.com/marketing-solutions" },
+      { "label": "LinkedIn Ads Benchmarks", "url": "https://business.linkedin.com/marketing-solutions/success/advertising-benchmarks" }
     ]
   }
 ]
-
-
-
