@@ -8,6 +8,7 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import EmailPopup from "@/components/EmailPopup";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Pricing />
       <FAQ />
       <Footer />
+      <EmailPopup />
     </main>
   );
 }
