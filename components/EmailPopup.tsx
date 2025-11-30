@@ -98,7 +98,7 @@ export default function EmailPopup() {
               </svg>
             </div>
             <h2 className="text-2xl font-bold text-white text-center">
-              Get Agency Growth Tips
+              Get the Latest Updates
             </h2>
             <p className="text-blue-100 text-center mt-2 text-sm">
               Join 500+ agency owners getting weekly insights
@@ -172,4 +172,5 @@ export default function EmailPopup() {
     </>
   );
 }
+
 
