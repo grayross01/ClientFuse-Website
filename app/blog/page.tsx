@@ -30,6 +30,15 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Client Management',
     featured: false
+  },,
+  {
+    slug: 'how-to-price-marketing-agency-services-2025',
+    title: 'How to Price Your Marketing Agency Services in 2025',
+    excerpt: 'A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.',
+    date: '2025-12-01',
+    readTime: '5 min read',
+    category: 'Agency Growth',
+    featured: false
   },
 ];
 
