@@ -39,6 +39,15 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Agency Growth',
     featured: false
+  },,
+  {
+    slug: 'google-ads-account-structure-best-practices-agencies',
+    title: 'Google Ads Account Structure Best Practices for Agencies',
+    excerpt: 'How to structure Google Ads accounts for maximum performance, easy management, and clear reporting across multiple clients.',
+    date: '2025-12-04',
+    readTime: '5 min read',
+    category: 'Google Ads',
+    featured: false
   },
 ];
 
