@@ -48,6 +48,15 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Google Ads',
     featured: false
+  },,
+  {
+    slug: 'building-repeatable-client-reporting-system',
+    title: 'Building a Repeatable Client Reporting System',
+    excerpt: 'How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.',
+    date: '2025-12-08',
+    readTime: '5 min read',
+    category: 'Operations',
+    featured: false
   },
 ];
 
