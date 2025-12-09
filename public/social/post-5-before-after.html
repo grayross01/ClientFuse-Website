@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    .half {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+    }
+    .before {
+      background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    }
+    .after {
+      background: linear-gradient(135deg, #bbf7d0 0%, #86efac 100%);
+    }
+    .label {
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 30px;
+    }
+    .before .label { color: #dc2626; }
+    .after .label { color: #16a34a; }
+    .content {
+      background: white;
+      border-radius: 20px;
+      padding: 30px 40px;
+      max-width: 700px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 0;
+      font-size: 20px;
+      color: #374151;
+    }
+    .step-icon {
+      font-size: 24px;
+    }
+    .before .step { border-bottom: 1px solid #fecaca; }
+    .before .step:last-child { border-bottom: none; }
+    .after .step { border-bottom: 1px solid #bbf7d0; }
+    .after .step:last-child { border-bottom: none; }
+    .time {
+      margin-left: auto;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .before .time {
+      background: #fecaca;
+      color: #dc2626;
+    }
+    .after .time {
+      background: #bbf7d0;
+      color: #16a34a;
+    }
+    .total {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .before .total { 
+      color: #dc2626;
+      border-top: 2px solid #fecaca;
+    }
+    .after .total { 
+      color: #16a34a;
+      border-top: 2px solid #bbf7d0;
+    }
+    .logo {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="half before">
+    <div class="label">😩 Before ClientFuse</div>
+    <div class="content">
+      <div class="step">
+        <span class="step-icon">📧</span>
+        <span>Send access instructions</span>
+        <span class="time">Day 1</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">❓</span>
+        <span>Client asks "how do I do this?"</span>
+        <span class="time">Day 2</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">📹</span>
+        <span>Send tutorial video</span>
+        <span class="time">Day 2</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">😕</span>
+        <span>Client adds wrong account</span>
+        <span class="time">Day 3</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">🔄</span>
+        <span>Start over...</span>
+        <span class="time">Day 5</span>
+      </div>
+      <div class="total">Total: 5 days 😤</div>
+    </div>
+  </div>
+  
+  <div class="half after">
+    <div class="label">😎 After ClientFuse</div>
+    <div class="content">
+      <div class="step">
+        <span class="step-icon">🔗</span>
+        <span>Send ClientFuse link</span>
+        <span class="time">1 min</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">👆</span>
+        <span>Client clicks link</span>
+        <span class="time">2 min</span>
+      </div>
+      <div class="step">
+        <span class="step-icon">✅</span>
+        <span>Access granted automatically</span>
+        <span class="time">4 min</span>
+      </div>
+      <div class="total">Total: 4 minutes 🎉</div>
+    </div>
+  </div>
+  
+  <div class="logo">ClientFuse</div>
+</body>
+</html>
+

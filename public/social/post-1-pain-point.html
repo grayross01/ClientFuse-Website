@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+      color: white;
+    }
+    .header {
+      font-size: 52px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      line-height: 1.2;
+    }
+    .highlight {
+      color: #60a5fa;
+    }
+    .emails {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+    .email {
+      display: flex;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e5e7eb;
+      align-items: flex-start;
+    }
+    .email:last-child { border-bottom: none; }
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .avatar.you { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
+    .avatar.client { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+    .email-content {
+      flex: 1;
+    }
+    .email-from {
+      font-weight: 700;
+      color: #1f2937;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    .email-text {
+      color: #6b7280;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .days {
+      color: #ef4444;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .solution {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .solution-text {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .logo {
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    Still chasing clients for <span class="highlight">access?</span>
+  </div>
+  
+  <div class="emails">
+    <div class="email">
+      <div class="avatar you"></div>
+      <div class="email-content">
+        <div class="email-from">You</div>
+        <div class="email-text">Hi! Can you add me as admin to your Facebook Business Manager?</div>
+      </div>
+    </div>
+    <div class="email">
+      <div class="avatar client"></div>
+      <div class="email-content">
+        <div class="email-from">Client</div>
+        <div class="email-text">Sure! How do I do that?</div>
+        <div class="days">2 days later...</div>
+      </div>
+    </div>
+    <div class="email">
+      <div class="avatar you"></div>
+      <div class="email-content">
+        <div class="email-from">You</div>
+        <div class="email-text">Go to Business Settings → People → Add...</div>
+      </div>
+    </div>
+    <div class="email">
+      <div class="avatar client"></div>
+      <div class="email-content">
+        <div class="email-from">Client</div>
+        <div class="email-text">I think I did it? I added you to my personal account</div>
+        <div class="days">3 more days...</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="solution">
+    <div class="solution-text">There's a better way →</div>
+    <div class="logo">ClientFuse</div>
+  </div>
+</body>
+</html>
+

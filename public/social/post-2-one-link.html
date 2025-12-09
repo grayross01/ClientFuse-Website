@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+      color: white;
+    }
+    .header {
+      font-size: 72px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .subheader {
+      font-size: 36px;
+      opacity: 0.9;
+      margin-bottom: 60px;
+    }
+    .link-box {
+      background: white;
+      border-radius: 60px;
+      padding: 30px 60px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 60px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .link-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .link-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+    .link-text {
+      font-size: 28px;
+      color: #374151;
+      font-family: monospace;
+    }
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .platform {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .platform-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .platform-name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .check {
+      color: #22c55e;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+    .cta {
+      font-size: 28px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+    .logo {
+      font-size: 42px;
+      font-weight: 800;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">One Link.</div>
+  <div class="subheader">All Platforms.</div>
+  
+  <div class="link-box">
+    <div class="link-icon">
+      <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    </div>
+    <div class="link-text">clientfuse.io/access/your-agency</div>
+  </div>
+  
+  <div class="platforms">
+    <div class="platform">
+      <div class="platform-icon">📘</div>
+      <div class="platform-name"><span class="check">✓</span>Facebook</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">📸</div>
+      <div class="platform-name"><span class="check">✓</span>Instagram</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">🎯</div>
+      <div class="platform-name"><span class="check">✓</span>Google Ads</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">📊</div>
+      <div class="platform-name"><span class="check">✓</span>Analytics</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">🏷️</div>
+      <div class="platform-name"><span class="check">✓</span>Tag Manager</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">🏪</div>
+      <div class="platform-name"><span class="check">✓</span>Business Profile</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">🔍</div>
+      <div class="platform-name"><span class="check">✓</span>Search Console</div>
+    </div>
+    <div class="platform">
+      <div class="platform-icon">🛒</div>
+      <div class="platform-name"><span class="check">✓</span>Merchant Center</div>
+    </div>
+  </div>
+  
+  <div class="cta">Get access in minutes, not days.</div>
+  <div class="logo">ClientFuse</div>
+</body>
+</html>
+

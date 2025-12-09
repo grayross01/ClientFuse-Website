@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px;
+      color: #1f2937;
+    }
+    .header {
+      font-size: 52px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .comparison {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .box {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+      width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .box.old {
+      opacity: 0.7;
+    }
+    .box.new {
+      border: 4px solid #22c55e;
+      transform: scale(1.05);
+    }
+    .box-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #6b7280;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .box-time {
+      font-size: 72px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .box.old .box-time {
+      color: #ef4444;
+    }
+    .box.new .box-time {
+      color: #22c55e;
+    }
+    .box-unit {
+      font-size: 28px;
+      color: #6b7280;
+    }
+    .box-desc {
+      font-size: 18px;
+      color: #9ca3af;
+      margin-top: 20px;
+    }
+    .arrow {
+      font-size: 60px;
+      align-self: center;
+    }
+    .savings {
+      background: #1f2937;
+      color: white;
+      border-radius: 20px;
+      padding: 30px 60px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .savings-value {
+      font-size: 42px;
+      font-weight: 800;
+      color: #22c55e;
+    }
+    .savings-label {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+    .logo {
+      font-size: 42px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">⏱️ Quick Math for Agency Owners</div>
+  
+  <div class="comparison">
+    <div class="box old">
+      <div class="box-label">The Old Way</div>
+      <div class="box-time">3-5</div>
+      <div class="box-unit">days</div>
+      <div class="box-desc">Per client onboarding</div>
+    </div>
+    
+    <div class="arrow">→</div>
+    
+    <div class="box new">
+      <div class="box-label">With ClientFuse</div>
+      <div class="box-time">5</div>
+      <div class="box-unit">minutes</div>
+      <div class="box-desc">Per client onboarding</div>
+    </div>
+  </div>
+  
+  <div class="savings">
+    <div class="savings-value">20+ hours saved per month</div>
+    <div class="savings-label">What would you do with that time?</div>
+  </div>
+  
+  <div class="logo">ClientFuse</div>
+</body>
+</html>
+
