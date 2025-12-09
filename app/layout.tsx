@@ -125,6 +125,23 @@ export default function RootLayout({
             ]
           }) }}
         />
+        
+        {/* Crisp Chat */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.$crisp=[];
+              window.CRISP_WEBSITE_ID="aaea48f9-9674-4768-a4ca-d65bb823f182";
+              (function(){
+                d=document;
+                s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";
+                s.async=1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+              })();
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
