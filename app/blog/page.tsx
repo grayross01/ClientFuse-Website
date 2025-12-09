@@ -58,6 +58,15 @@ const blogPosts = [
     category: 'Operations',
     featured: false
   },
+  {
+    slug: 'managing-remote-marketing-teams-leading-agencies',
+    title: 'Managing Remote Marketing Teams: Lessons from Leading Agencies',
+    excerpt: 'Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.',
+    date: '2025-12-08',
+    readTime: '5 min read',
+    category: 'Team Management',
+    featured: false
+  },
 ];
 
 export default function Blog() {

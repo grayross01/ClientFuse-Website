@@ -1,44 +1,92 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Building a Repeatable Client Reporting System | ClientFuse Blog',
   description: 'How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.',
+  keywords: 'operations, marketing agency, digital marketing, agency tips, client management, building, repeatable, client, reporting, system',
+  authors: [{ name: 'ClientFuse' }],
+  openGraph: {
+    title: 'Building a Repeatable Client Reporting System',
+    description: 'How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.',
+    url: 'https://clientfuse.io/blog/building-repeatable-client-reporting-system',
+    siteName: 'ClientFuse',
+    type: 'article',
+    publishedTime: '2025-12-09T04:34:16.111Z',
+    modifiedTime: '2025-12-09T04:34:16.111Z',
+    section: 'Operations',
+    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'Building a Repeatable Client Reporting System' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Building a Repeatable Client Reporting System',
+    description: 'How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.',
+    images: ['https://clientfuse.io/og-image.png'],
+  },
+  alternates: { canonical: 'https://clientfuse.io/blog/building-repeatable-client-reporting-system' },
 };
 
 export default function BlogPost() {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Blog
-          </Link>
-          <div className="mb-6">
-            <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Operations</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building a Repeatable Client Reporting System</h1>
-          <div className="flex items-center gap-4 text-gray-500">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>December 8, 2025</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>5 min read</span>
-            </div>
-          </div>
-        </div>
-      </section>
+  const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Building a Repeatable Client Reporting System",
+      "description": "How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.",
+      "image": "https://clientfuse.io/og-image.png",
+      "author": {
+          "@type": "Organization",
+          "name": "ClientFuse",
+          "url": "https://clientfuse.io"
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": "ClientFuse",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "https://clientfuse.io/combined_logo.png"
+          }
+      },
+      "datePublished": "2025-12-09T04:34:16.111Z",
+      "dateModified": "2025-12-09T04:34:16.111Z",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://clientfuse.io/blog/building-repeatable-client-reporting-system"
+      },
+      "articleSection": "Operations",
+      "wordCount": 207
+  };
 
-      {/* Article Content */}
-      <article className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.
-          </p>
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <div className="min-h-screen bg-white">
+        <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
+          <div className="max-w-4xl mx-auto">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8">
+              <ArrowLeft className="w-4 h-4" />
+              Back to Blog
+            </Link>
+            <div className="mb-6">
+              <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Operations</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building a Repeatable Client Reporting System</h1>
+            <div className="flex items-center gap-4 text-gray-500">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                <time dateTime="2025-12-08">December 8, 2025</time>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>5 min read</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <article className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-gray">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.</p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The Reporting Problem</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -79,18 +127,42 @@ export default function BlogPost() {
             </li>
           </ul>
 
-          {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 mt-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Streamline Your Client Onboarding</h3>
-            <p className="text-gray-700 mb-6">
-              Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.
-            </p>
-            <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
-              Start Free Trial
+          {/* Related Articles */}
+          <div className="mt-16 pt-8 border-t border-gray-200">
+            <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+            <Link 
+              href="/blog/complete-guide-client-onboarding-marketing-agencies"
+              className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
+            >
+              <span className="text-xs text-blue-600 font-medium">Client Management</span>
+              <h4 className="text-gray-900 font-semibold mt-1 line-clamp-2">The Complete Guide to Client Onboarding for Marketing Agencies</h4>
             </Link>
+            <Link 
+              href="/blog/how-to-price-marketing-agency-services-2025"
+              className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
+            >
+              <span className="text-xs text-blue-600 font-medium">Agency Growth</span>
+              <h4 className="text-gray-900 font-semibold mt-1 line-clamp-2">How to Price Your Marketing Agency Services in 2025</h4>
+            </Link>
+            <Link 
+              href="/blog/google-ads-account-structure-best-practices-agencies"
+              className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
+            >
+              <span className="text-xs text-blue-600 font-medium">Google Ads</span>
+              <h4 className="text-gray-900 font-semibold mt-1 line-clamp-2">Google Ads Account Structure Best Practices for Agencies</h4>
+            </Link>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 mt-16 not-prose">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Streamline Your Client Onboarding</h3>
+              <p className="text-gray-700 mb-6">Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.</p>
+              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">Start Free Trial</Link>
+            </div>
+          </div>
+        </article>
+      </div>
+    </>
   );
 }
