@@ -157,7 +157,12 @@ function updateBlogListing(topic, slug) {
       const existingArray = arrayMatch[1];
       // Check if this post already exists
       if (!existingArray.includes(`slug: '${slug}'`)) {
-        const newArray = existingArray.trimEnd() + ',\n' + newEntry;
+        // Remove trailing comma if present to avoid double commas
+        let trimmedArray = existingArray.trimEnd();
+        if (trimmedArray.endsWith(',')) {
+          trimmedArray = trimmedArray.slice(0, -1);
+        }
+        const newArray = trimmedArray + ',\n' + newEntry;
         content = content.replace(arrayMatch[0], `const blogPosts = [${newArray}\n];`);
         fs.writeFileSync(blogListingPath, content);
         console.log(`Updated blog listing with: ${topic.title}`);

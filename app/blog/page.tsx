@@ -30,7 +30,7 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Client Management',
     featured: false
-  },,
+  },
   {
     slug: 'how-to-price-marketing-agency-services-2025',
     title: 'How to Price Your Marketing Agency Services in 2025',
@@ -39,7 +39,7 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Agency Growth',
     featured: false
-  },,
+  },
   {
     slug: 'google-ads-account-structure-best-practices-agencies',
     title: 'Google Ads Account Structure Best Practices for Agencies',
@@ -48,7 +48,7 @@ const blogPosts = [
     readTime: '5 min read',
     category: 'Google Ads',
     featured: false
-  },,
+  },
   {
     slug: 'building-repeatable-client-reporting-system',
     title: 'Building a Repeatable Client Reporting System',
