@@ -9,6 +9,9 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 const brevoApiKey = process.env.BREVO_API_KEY!;
 
 async function addContactToBrevo(email: string, firstName?: string, lastName?: string) {
+  console.log(`Attempting to add contact to Brevo: ${email}`);
+  console.log(`Brevo API key exists: ${!!brevoApiKey}, length: ${brevoApiKey?.length || 0}`);
+  
   const response = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
@@ -26,8 +29,11 @@ async function addContactToBrevo(email: string, firstName?: string, lastName?: s
     }),
   });
 
+  console.log(`Brevo response status: ${response.status}`);
+  
   if (!response.ok) {
     const error = await response.text();
+    console.error(`Brevo API error response: ${error}`);
     // Don't throw on duplicate contact (already exists)
     if (response.status === 400 && error.includes('duplicate')) {
       console.log(`Contact ${email} already exists in Brevo`);
@@ -36,7 +42,9 @@ async function addContactToBrevo(email: string, firstName?: string, lastName?: s
     throw new Error(`Brevo API error: ${error}`);
   }
 
-  return response.json();
+  const result = await response.json();
+  console.log(`Brevo success response:`, JSON.stringify(result));
+  return result;
 }
 
 export async function POST(req: NextRequest) {
@@ -74,12 +82,14 @@ export async function POST(req: NextRequest) {
           lastName = nameParts.slice(1).join(' ') || '';
         }
 
-        await addContactToBrevo(customer.email, firstName, lastName);
-        console.log(`Added ${customer.email} to Brevo`);
+        const result = await addContactToBrevo(customer.email, firstName, lastName);
+        console.log(`Successfully added ${customer.email} to Brevo:`, result);
       } catch (error) {
         console.error('Error adding contact to Brevo:', error);
         // Don't return error - we still want to acknowledge the webhook
       }
+    } else {
+      console.log('Customer has no email, skipping Brevo');
     }
   }
 
