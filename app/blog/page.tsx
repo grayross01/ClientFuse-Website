@@ -67,6 +67,15 @@ const blogPosts = [
     category: 'Team Management',
     featured: false
   },
+  {
+    slug: 'facebook-ads-ecommerce-agency-playbook',
+    title: 'Facebook Ads for E-commerce: Agency Playbook',
+    excerpt: 'Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.',
+    date: '2025-12-11',
+    readTime: '5 min read',
+    category: 'Facebook Ads',
+    featured: false
+  },
 ];
 
 export default function Blog() {
