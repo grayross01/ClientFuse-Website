@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #1a1a2e;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .og-image {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #0a192f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Background decoration */
+    .og-image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .og-image::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    /* Grid pattern */
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .logo-text {
+      font-size: 44px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+    
+    .headline {
+      font-size: 52px;
+      font-weight: 700;
+      color: #ffffff;
+      max-width: 950px;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 0 auto;
+    }
+    
+    .subheadline {
+      font-size: 24px;
+      color: #94a3b8;
+      max-width: 700px;
+      line-height: 1.4;
+      margin: 0 auto;
+    }
+    
+    .platforms {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 8px;
+    }
+    
+    .platform {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #64748b;
+      font-size: 18px;
+    }
+    
+    .platform-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+    
+    .url {
+      font-size: 20px;
+      color: #64748b;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="og-image">
+    <div class="grid-pattern"></div>
+    <div class="content">
+      <div class="logo-container">
+        <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#3b82f6"/>
+              <stop offset="100%" style="stop-color:#60a5fa"/>
+            </linearGradient>
+          </defs>
+          <circle cx="30" cy="35" r="18" stroke="url(#logoGradient)" stroke-width="6" fill="none"/>
+          <circle cx="70" cy="35" r="18" stroke="url(#logoGradient)" stroke-width="6" fill="none"/>
+          <circle cx="50" cy="70" r="18" stroke="url(#logoGradient)" stroke-width="6" fill="none"/>
+          <line x1="42" y1="47" x2="42" y2="58" stroke="url(#logoGradient)" stroke-width="5" stroke-linecap="round"/>
+          <line x1="58" y1="47" x2="58" y2="58" stroke="url(#logoGradient)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">ClientFuse</span>
+      </div>
+      
+      <h1 class="headline">Simplify Client Account Access for Marketing Agencies</h1>
+      
+      <p class="subheadline">One link. Instant access to Facebook, Google, Instagram & more.</p>
+      
+      <div class="platforms">
+        <span class="platform"><span class="platform-dot"></span>Meta</span>
+        <span class="platform"><span class="platform-dot"></span>Google Ads</span>
+        <span class="platform"><span class="platform-dot"></span>Analytics</span>
+        <span class="platform"><span class="platform-dot"></span>Search Console</span>
+      </div>
+      
+      <span class="url">clientfuse.io</span>
+    </div>
+  </div>
+</body>
+</html>
+
