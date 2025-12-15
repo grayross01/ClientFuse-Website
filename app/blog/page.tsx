@@ -76,6 +76,15 @@ const blogPosts = [
     category: 'Facebook Ads',
     featured: false
   },
+  {
+    slug: 'how-to-fire-client-when-you-should',
+    title: 'How to Fire a Client (And When You Should)',
+    excerpt: 'Knowing when to end a client relationship is as important as winning new business. Here\'s how to do it professionally.',
+    date: '2025-12-15',
+    readTime: '5 min read',
+    category: 'Client Management',
+    featured: false
+  },
 ];
 
 export default function Blog() {
