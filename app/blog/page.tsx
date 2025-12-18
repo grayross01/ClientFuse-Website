@@ -1,6 +1,28 @@
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Metadata } from 'next';
 import NewsletterForm from '@/components/NewsletterForm';
+
+export const metadata: Metadata = {
+  title: 'Marketing Agency Blog | Tips, Strategies & Best Practices | ClientFuse',
+  description: 'Expert insights for marketing agencies: client management, Facebook & Google Ads strategies, pricing guides, onboarding tips, and tools to grow your agency.',
+  keywords: 'marketing agency blog, agency tips, client management, Facebook Ads, Google Ads, marketing agency growth, digital marketing strategies, agency best practices',
+  openGraph: {
+    title: 'Marketing Agency Blog | ClientFuse',
+    description: 'Expert insights for marketing agencies: client management, advertising strategies, and tools to grow your agency.',
+    url: 'https://clientfuse.io/blog',
+    siteName: 'ClientFuse',
+    type: 'website',
+    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'ClientFuse Blog' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Marketing Agency Blog | ClientFuse',
+    description: 'Expert insights for marketing agencies: client management, advertising strategies, and tools to grow your agency.',
+    images: ['https://clientfuse.io/og-image.png'],
+  },
+  alternates: { canonical: 'https://clientfuse.io/blog' },
+};
 
 // Blog posts listing
 const blogPosts = [
