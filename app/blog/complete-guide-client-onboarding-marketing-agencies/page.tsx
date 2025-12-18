@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     publishedTime: '2025-12-09T04:34:16.062Z',
     modifiedTime: '2025-12-09T04:34:16.062Z',
     section: 'Client Management',
-    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'The Complete Guide to Client Onboarding for Marketing Agencies' }],
+    images: [{ url: 'https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management', width: 1200, height: 630, alt: 'The Complete Guide to Client Onboarding for Marketing Agencies' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Complete Guide to Client Onboarding for Marketing Agencies',
     description: 'A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management'],
   },
   alternates: { canonical: 'https://clientfuse.io/blog/complete-guide-client-onboarding-marketing-agencies' },
 };
@@ -33,7 +33,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "The Complete Guide to Client Onboarding for Marketing Agencies",
       "description": "A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

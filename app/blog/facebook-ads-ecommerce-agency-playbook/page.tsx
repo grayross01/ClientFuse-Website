@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     section: 'Facebook Ads',
     images: [
       {
-        url: 'https://clientfuse.io/og-image.png',
+        url: 'https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads',
         width: 1200,
         height: 630,
         alt: 'Facebook Ads for E-commerce: Agency Playbook',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Facebook Ads for E-commerce: Agency Playbook',
     description: 'Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/facebook-ads-ecommerce-agency-playbook',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Facebook Ads for E-commerce: Agency Playbook",
       "description": "Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     publishedTime: '2025-12-09T04:34:16.111Z',
     modifiedTime: '2025-12-09T04:34:16.111Z',
     section: 'Operations',
-    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'Building a Repeatable Client Reporting System' }],
+    images: [{ url: 'https://clientfuse.io/api/og?title=Building%20a%20Repeatable%20Client%20Reporting%20System&category=Operations', width: 1200, height: 630, alt: 'Building a Repeatable Client Reporting System' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Building a Repeatable Client Reporting System',
     description: 'How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=Building%20a%20Repeatable%20Client%20Reporting%20System&category=Operations'],
   },
   alternates: { canonical: 'https://clientfuse.io/blog/building-repeatable-client-reporting-system' },
 };
@@ -33,7 +33,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Building a Repeatable Client Reporting System",
       "description": "How to create reports that clients actually read, automate the tedious parts, and turn reporting into a retention tool.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=Building%20a%20Repeatable%20Client%20Reporting%20System&category=Operations",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

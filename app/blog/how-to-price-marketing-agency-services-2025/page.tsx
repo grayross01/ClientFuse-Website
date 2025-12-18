@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     publishedTime: '2025-12-09T04:34:16.109Z',
     modifiedTime: '2025-12-09T04:34:16.109Z',
     section: 'Agency Growth',
-    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'How to Price Your Marketing Agency Services in 2025' }],
+    images: [{ url: 'https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth', width: 1200, height: 630, alt: 'How to Price Your Marketing Agency Services in 2025' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How to Price Your Marketing Agency Services in 2025',
     description: 'A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth'],
   },
   alternates: { canonical: 'https://clientfuse.io/blog/how-to-price-marketing-agency-services-2025' },
 };
@@ -33,7 +33,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "How to Price Your Marketing Agency Services in 2025",
       "description": "A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

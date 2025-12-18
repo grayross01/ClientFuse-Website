@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     section: 'Client Management',
     images: [
       {
-        url: 'https://clientfuse.io/og-image.png',
+        url: 'https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management',
         width: 1200,
         height: 630,
         alt: 'How to Fire a Client (And When You Should)',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How to Fire a Client (And When You Should)',
     description: 'Knowing when to end a client relationship is as important as winning new business. Here\'s how to do it professionally.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/how-to-fire-client-when-you-should',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "How to Fire a Client (And When You Should)",
       "description": "Knowing when to end a client relationship is as important as winning new business. Here's how to do it professionally.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

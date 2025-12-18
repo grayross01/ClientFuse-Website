@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     publishedTime: '2025-12-09T04:34:16.110Z',
     modifiedTime: '2025-12-09T04:34:16.110Z',
     section: 'Google Ads',
-    images: [{ url: 'https://clientfuse.io/og-image.png', width: 1200, height: 630, alt: 'Google Ads Account Structure Best Practices for Agencies' }],
+    images: [{ url: 'https://clientfuse.io/api/og?title=Google%20Ads%20Account%20Structure%20Best%20Practices%20for%20Agencies&category=Google%20Ads', width: 1200, height: 630, alt: 'Google Ads Account Structure Best Practices for Agencies' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Google Ads Account Structure Best Practices for Agencies',
     description: 'How to structure Google Ads accounts for maximum performance, easy management, and clear reporting across multiple clients.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=Google%20Ads%20Account%20Structure%20Best%20Practices%20for%20Agencies&category=Google%20Ads'],
   },
   alternates: { canonical: 'https://clientfuse.io/blog/google-ads-account-structure-best-practices-agencies' },
 };
@@ -33,7 +33,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Google Ads Account Structure Best Practices for Agencies",
       "description": "How to structure Google Ads accounts for maximum performance, easy management, and clear reporting across multiple clients.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=Google%20Ads%20Account%20Structure%20Best%20Practices%20for%20Agencies&category=Google%20Ads",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",

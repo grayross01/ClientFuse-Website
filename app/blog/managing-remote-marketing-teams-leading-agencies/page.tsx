@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     section: 'Team Management',
     images: [
       {
-        url: 'https://clientfuse.io/og-image.png',
+        url: 'https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management',
         width: 1200,
         height: 630,
         alt: 'Managing Remote Marketing Teams: Lessons from Leading Agencies',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Managing Remote Marketing Teams: Lessons from Leading Agencies',
     description: 'Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.',
-    images: ['https://clientfuse.io/og-image.png'],
+    images: ['https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/managing-remote-marketing-teams-leading-agencies',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Managing Remote Marketing Teams: Lessons from Leading Agencies",
       "description": "Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.",
-      "image": "https://clientfuse.io/og-image.png",
+      "image": "https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
