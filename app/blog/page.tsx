@@ -107,6 +107,15 @@ const blogPosts = [
     category: 'Client Management',
     featured: false
   },
+  {
+    slug: 'seo-fundamentals-every-agency-should-master',
+    title: 'SEO Fundamentals Every Agency Should Master',
+    excerpt: 'Core SEO principles that drive organic growth, regardless of algorithm updates or industry changes.',
+    date: '2025-12-18',
+    readTime: '5 min read',
+    category: 'SEO',
+    featured: false
+  },
 ];
 
 export default function Blog() {
