@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "What platforms can I access through ClientFuse?",
-    answer: "ClientFuse supports major marketing platforms including Facebook, Instagram, Google Ads, Google Analytics, Google Tag Manager, Google Business Profile, Google Search Console, and Google Merchant Center. We're constantly adding more integrations based on user feedback.",
+    answer: "ClientFuse supports major marketing platforms including Facebook, Instagram, LinkedIn, Google Ads, Google Analytics, Google Tag Manager, Google Business Profile, Google Search Console, and Google Merchant Center. We're constantly adding more integrations based on user feedback.",
   },
   {
     question: "Is ClientFuse secure?",

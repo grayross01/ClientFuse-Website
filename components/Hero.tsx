@@ -20,7 +20,7 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-            Send one simple link. Your clients grant access to Facebook, Google, and more.
+            Send one simple link. Your clients grant access to Facebook, Google, LinkedIn, and more.
           </p>
 
           {/* CTA Buttons */}

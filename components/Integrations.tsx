@@ -1,6 +1,7 @@
 const integrations = [
   { name: "Facebook", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" },
   { name: "Instagram", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" },
+  { name: "LinkedIn", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
   { name: "Google Ads", logo: "/logos/google-ads-manager.png" },
   { name: "Google Analytics", logo: "https://upload.wikimedia.org/wikipedia/commons/7/77/GAnalytics.svg" },
   { name: "Google Tag Manager", logo: "/logos/google-tag-manager.svg" },
@@ -15,7 +16,7 @@ export default function Integrations() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Connect to <span className="gradient-text">Meta & Google platforms</span>
+            Connect to <span className="gradient-text">Meta, Google & LinkedIn</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Get access to all the marketing platforms your clients use—all from one unified interface.
