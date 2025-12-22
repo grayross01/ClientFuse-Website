@@ -116,6 +116,15 @@ const blogPosts = [
     category: 'SEO',
     featured: false
   },
+  {
+    slug: 'winning-agency-proposals-templates-strategies',
+    title: 'Winning Agency Proposals: Templates and Strategies',
+    excerpt: 'How to write proposals that close deals, avoid common pitfalls, and stand out from competing agencies.',
+    date: '2025-12-22',
+    readTime: '5 min read',
+    category: 'Sales',
+    featured: false
+  },
 ];
 
 export default function Blog() {
