@@ -125,6 +125,15 @@ const blogPosts = [
     category: 'Sales',
     featured: false
   },
+  {
+    slug: 'linkedin-ads-b2b-lead-generation-complete-guide',
+    title: 'LinkedIn Ads for B2B Lead Generation: A Complete Guide',
+    excerpt: 'How to run profitable LinkedIn advertising campaigns for B2B clients, from targeting to creative to conversion.',
+    date: '2025-12-25',
+    readTime: '5 min read',
+    category: 'LinkedIn Ads',
+    featured: false
+  },
 ];
 
 export default function Blog() {
