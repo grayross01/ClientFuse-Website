@@ -13,18 +13,27 @@ export const metadata: Metadata = {
     url: 'https://clientfuse.io/blog/complete-guide-client-onboarding-marketing-agencies',
     siteName: 'ClientFuse',
     type: 'article',
-    publishedTime: '2025-12-09T04:34:16.062Z',
-    modifiedTime: '2025-12-09T04:34:16.062Z',
+    publishedTime: '2025-12-29T14:18:06.195Z',
+    modifiedTime: '2025-12-29T14:18:06.195Z',
     section: 'Client Management',
-    images: [{ url: 'https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management', width: 1200, height: 630, alt: 'The Complete Guide to Client Onboarding for Marketing Agencies' }],
+    images: [
+      {
+        url: 'https://clientfuse.io/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'The Complete Guide to Client Onboarding for Marketing Agencies',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Complete Guide to Client Onboarding for Marketing Agencies',
     description: 'A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.',
-    images: ['https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management'],
+    images: ['https://clientfuse.io/og-image.png'],
   },
-  alternates: { canonical: 'https://clientfuse.io/blog/complete-guide-client-onboarding-marketing-agencies' },
+  alternates: {
+    canonical: 'https://clientfuse.io/blog/complete-guide-client-onboarding-marketing-agencies',
+  },
 };
 
 export default function BlogPost() {
@@ -33,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "The Complete Guide to Client Onboarding for Marketing Agencies",
       "description": "A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.",
-      "image": "https://clientfuse.io/api/og?title=The%20Complete%20Guide%20to%20Client%20Onboarding%20for%20Marketing%20Agencies&category=Client%20Management",
+      "image": "https://clientfuse.io/og-image.png",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
@@ -47,8 +56,8 @@ export default function BlogPost() {
               "url": "https://clientfuse.io/combined_logo.png"
           }
       },
-      "datePublished": "2025-12-09T04:34:16.062Z",
-      "dateModified": "2025-12-09T04:34:16.062Z",
+      "datePublished": "2025-12-29T14:18:06.195Z",
+      "dateModified": "2025-12-29T14:18:06.195Z",
       "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://clientfuse.io/blog/complete-guide-client-onboarding-marketing-agencies"
@@ -59,8 +68,12 @@ export default function BlogPost() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="min-h-screen bg-white">
+        {/* Header */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
           <div className="max-w-4xl mx-auto">
             <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8">
@@ -74,7 +87,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2025-12-08">December 8, 2025</time>
+                <time dateTime="2025-12-29">December 29, 2025</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -84,9 +97,12 @@ export default function BlogPost() {
           </div>
         </section>
 
+        {/* Article Content */}
         <article className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto prose prose-lg prose-gray">
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.</p>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              A step-by-step framework for onboarding new clients efficiently, setting expectations, and building lasting relationships from day one.
+            </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Why Client Onboarding Matters</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -155,10 +171,15 @@ export default function BlogPost() {
             </div>
           </div>
 
+            {/* CTA Section */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 mt-16 not-prose">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Streamline Your Client Onboarding</h3>
-              <p className="text-gray-700 mb-6">Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.</p>
-              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">Start Free Trial</Link>
+              <p className="text-gray-700 mb-6">
+                Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.
+              </p>
+              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
+                Start Free Trial
+              </Link>
             </div>
           </div>
         </article>
