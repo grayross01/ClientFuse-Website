@@ -13,18 +13,27 @@ export const metadata: Metadata = {
     url: 'https://clientfuse.io/blog/how-to-price-marketing-agency-services-2025',
     siteName: 'ClientFuse',
     type: 'article',
-    publishedTime: '2025-12-09T04:34:16.109Z',
-    modifiedTime: '2025-12-09T04:34:16.109Z',
+    publishedTime: '2026-01-01T14:16:12.014Z',
+    modifiedTime: '2026-01-01T14:16:12.014Z',
     section: 'Agency Growth',
-    images: [{ url: 'https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth', width: 1200, height: 630, alt: 'How to Price Your Marketing Agency Services in 2025' }],
+    images: [
+      {
+        url: 'https://clientfuse.io/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'How to Price Your Marketing Agency Services in 2025',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How to Price Your Marketing Agency Services in 2025',
     description: 'A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.',
-    images: ['https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth'],
+    images: ['https://clientfuse.io/og-image.png'],
   },
-  alternates: { canonical: 'https://clientfuse.io/blog/how-to-price-marketing-agency-services-2025' },
+  alternates: {
+    canonical: 'https://clientfuse.io/blog/how-to-price-marketing-agency-services-2025',
+  },
 };
 
 export default function BlogPost() {
@@ -33,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "How to Price Your Marketing Agency Services in 2025",
       "description": "A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.",
-      "image": "https://clientfuse.io/api/og?title=How%20to%20Price%20Your%20Marketing%20Agency%20Services%20in%202025&category=Agency%20Growth",
+      "image": "https://clientfuse.io/og-image.png",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
@@ -47,8 +56,8 @@ export default function BlogPost() {
               "url": "https://clientfuse.io/combined_logo.png"
           }
       },
-      "datePublished": "2025-12-09T04:34:16.109Z",
-      "dateModified": "2025-12-09T04:34:16.109Z",
+      "datePublished": "2026-01-01T14:16:12.014Z",
+      "dateModified": "2026-01-01T14:16:12.014Z",
       "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://clientfuse.io/blog/how-to-price-marketing-agency-services-2025"
@@ -59,8 +68,12 @@ export default function BlogPost() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="min-h-screen bg-white">
+        {/* Header */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
           <div className="max-w-4xl mx-auto">
             <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8">
@@ -74,7 +87,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2025-12-08">December 8, 2025</time>
+                <time dateTime="2026-01-01">January 1, 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -84,9 +97,12 @@ export default function BlogPost() {
           </div>
         </section>
 
+        {/* Article Content */}
         <article className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto prose prose-lg prose-gray">
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.</p>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              A comprehensive breakdown of pricing models, rate calculations, and strategies to maximize profitability while staying competitive.
+            </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The Pricing Dilemma</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
@@ -155,10 +171,15 @@ export default function BlogPost() {
             </div>
           </div>
 
+            {/* CTA Section */}
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100 mt-16 not-prose">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Streamline Your Client Onboarding</h3>
-              <p className="text-gray-700 mb-6">Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.</p>
-              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">Start Free Trial</Link>
+              <p className="text-gray-700 mb-6">
+                Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.
+              </p>
+              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
+                Start Free Trial
+              </Link>
             </div>
           </div>
         </article>
