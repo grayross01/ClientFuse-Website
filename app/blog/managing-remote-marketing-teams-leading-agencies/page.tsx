@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     url: 'https://clientfuse.io/blog/managing-remote-marketing-teams-leading-agencies',
     siteName: 'ClientFuse',
     type: 'article',
-    publishedTime: '2025-12-09T04:33:08.328Z',
-    modifiedTime: '2025-12-09T04:33:08.328Z',
+    publishedTime: '2026-01-12T14:21:27.719Z',
+    modifiedTime: '2026-01-12T14:21:27.719Z',
     section: 'Team Management',
     images: [
       {
-        url: 'https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management',
+        url: 'https://clientfuse.io/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Managing Remote Marketing Teams: Lessons from Leading Agencies',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Managing Remote Marketing Teams: Lessons from Leading Agencies',
     description: 'Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.',
-    images: ['https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management'],
+    images: ['https://clientfuse.io/og-image.png'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/managing-remote-marketing-teams-leading-agencies',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Managing Remote Marketing Teams: Lessons from Leading Agencies",
       "description": "Proven strategies for building culture, maintaining productivity, and scaling a distributed agency team.",
-      "image": "https://clientfuse.io/api/og?title=Managing%20Remote%20Marketing%20Teams&category=Team%20Management",
+      "image": "https://clientfuse.io/og-image.png",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
@@ -56,8 +56,8 @@ export default function BlogPost() {
               "url": "https://clientfuse.io/combined_logo.png"
           }
       },
-      "datePublished": "2025-12-09T04:33:08.328Z",
-      "dateModified": "2025-12-09T04:33:08.328Z",
+      "datePublished": "2026-01-12T14:21:27.719Z",
+      "dateModified": "2026-01-12T14:21:27.719Z",
       "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://clientfuse.io/blog/managing-remote-marketing-teams-leading-agencies"
@@ -87,7 +87,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2025-12-08">December 8, 2025</time>
+                <time dateTime="2026-01-12">January 12, 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
