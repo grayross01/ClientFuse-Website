@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     url: 'https://clientfuse.io/blog/facebook-ads-ecommerce-agency-playbook',
     siteName: 'ClientFuse',
     type: 'article',
-    publishedTime: '2025-12-11T14:19:21.471Z',
-    modifiedTime: '2025-12-11T14:19:21.471Z',
+    publishedTime: '2026-01-15T14:20:51.137Z',
+    modifiedTime: '2026-01-15T14:20:51.137Z',
     section: 'Facebook Ads',
     images: [
       {
-        url: 'https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads',
+        url: 'https://clientfuse.io/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Facebook Ads for E-commerce: Agency Playbook',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Facebook Ads for E-commerce: Agency Playbook',
     description: 'Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.',
-    images: ['https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads'],
+    images: ['https://clientfuse.io/og-image.png'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/facebook-ads-ecommerce-agency-playbook',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "Facebook Ads for E-commerce: Agency Playbook",
       "description": "Advanced strategies for running profitable Facebook and Instagram campaigns for e-commerce clients in the post-iOS 14 era.",
-      "image": "https://clientfuse.io/api/og?title=Facebook%20Ads%20for%20E-commerce%3A%20Agency%20Playbook&category=Facebook%20Ads",
+      "image": "https://clientfuse.io/og-image.png",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
@@ -56,8 +56,8 @@ export default function BlogPost() {
               "url": "https://clientfuse.io/combined_logo.png"
           }
       },
-      "datePublished": "2025-12-11T14:19:21.471Z",
-      "dateModified": "2025-12-11T14:19:21.471Z",
+      "datePublished": "2026-01-15T14:20:51.137Z",
+      "dateModified": "2026-01-15T14:20:51.137Z",
       "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://clientfuse.io/blog/facebook-ads-ecommerce-agency-playbook"
@@ -87,7 +87,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2025-12-11">December 11, 2025</time>
+                <time dateTime="2026-01-15">January 15, 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
