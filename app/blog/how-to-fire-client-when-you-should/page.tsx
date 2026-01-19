@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     url: 'https://clientfuse.io/blog/how-to-fire-client-when-you-should',
     siteName: 'ClientFuse',
     type: 'article',
-    publishedTime: '2025-12-15T14:20:57.612Z',
-    modifiedTime: '2025-12-15T14:20:57.612Z',
+    publishedTime: '2026-01-19T14:23:15.632Z',
+    modifiedTime: '2026-01-19T14:23:15.632Z',
     section: 'Client Management',
     images: [
       {
-        url: 'https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management',
+        url: 'https://clientfuse.io/og-image.png',
         width: 1200,
         height: 630,
         alt: 'How to Fire a Client (And When You Should)',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How to Fire a Client (And When You Should)',
     description: 'Knowing when to end a client relationship is as important as winning new business. Here\'s how to do it professionally.',
-    images: ['https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management'],
+    images: ['https://clientfuse.io/og-image.png'],
   },
   alternates: {
     canonical: 'https://clientfuse.io/blog/how-to-fire-client-when-you-should',
@@ -42,7 +42,7 @@ export default function BlogPost() {
       "@type": "Article",
       "headline": "How to Fire a Client (And When You Should)",
       "description": "Knowing when to end a client relationship is as important as winning new business. Here's how to do it professionally.",
-      "image": "https://clientfuse.io/api/og?title=How%20to%20Fire%20a%20Client%20(And%20When%20You%20Should)&category=Client%20Management",
+      "image": "https://clientfuse.io/og-image.png",
       "author": {
           "@type": "Organization",
           "name": "ClientFuse",
@@ -56,8 +56,8 @@ export default function BlogPost() {
               "url": "https://clientfuse.io/combined_logo.png"
           }
       },
-      "datePublished": "2025-12-15T14:20:57.612Z",
-      "dateModified": "2025-12-15T14:20:57.612Z",
+      "datePublished": "2026-01-19T14:23:15.632Z",
+      "dateModified": "2026-01-19T14:23:15.632Z",
       "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://clientfuse.io/blog/how-to-fire-client-when-you-should"
@@ -87,7 +87,7 @@ export default function BlogPost() {
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime="2025-12-15">December 15, 2025</time>
+                <time dateTime="2026-01-19">January 19, 2026</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
