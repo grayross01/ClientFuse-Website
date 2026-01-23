@@ -6,6 +6,7 @@
   
   SEO Features:
   - AI-generated content optimized for target keywords
+  - DALL-E generated featured images
   - OpenGraph metadata for social sharing
   - Twitter card metadata
   - Article schema markup (JSON-LD)
@@ -25,10 +26,10 @@ const topicsPath = path.join(__dirname, 'blog-topics.json');
 const statePath = path.join(__dirname, '.blog-state.json');
 const blogDir = path.join(repoRoot, 'app', 'blog');
 const blogListingPath = path.join(blogDir, 'page.tsx');
+const publicBlogDir = path.join(repoRoot, 'public', 'blog');
 
 const SITE_URL = 'https://clientfuse.io';
 const SITE_NAME = 'ClientFuse';
-const DEFAULT_IMAGE = 'https://clientfuse.io/og-image.png';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 function readJson(p) {
@@ -62,6 +63,102 @@ function toISODateTime() {
 
 function escapeJSX(str) {
   return str.replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/`/g, '\\`');
+}
+
+// Generate featured image using DALL-E
+async function generateImageWithDALLE(topic, slug) {
+  if (!OPENAI_API_KEY) {
+    console.error('ERROR: OPENAI_API_KEY environment variable is required');
+    process.exit(1);
+  }
+
+  const imagePrompt = `Create a professional, modern blog header image for a marketing agency article titled "${topic.title}". 
+  
+Style: Clean, minimalist, corporate illustration style with a blue and purple gradient color scheme.
+Theme: Digital marketing, client management, business efficiency.
+Elements: Abstract shapes, icons related to ${topic.category}, professional business imagery.
+Mood: Professional, trustworthy, modern, tech-forward.
+Do NOT include any text, words, or letters in the image.
+The image should work well as a 1200x630 blog header/social share image.`;
+
+  const requestBody = JSON.stringify({
+    model: 'dall-e-3',
+    prompt: imagePrompt,
+    n: 1,
+    size: '1792x1024',
+    quality: 'standard',
+    response_format: 'url'
+  });
+
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'api.openai.com',
+      port: 443,
+      path: '/v1/images/generations',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Length': Buffer.byteLength(requestBody)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', async () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.error) {
+            reject(new Error(`DALL-E API Error: ${response.error.message}`));
+            return;
+          }
+          const imageUrl = response.data[0].url;
+          
+          // Download and save the image
+          const imagePath = await downloadImage(imageUrl, slug);
+          resolve(imagePath);
+        } catch (e) {
+          reject(new Error(`Failed to generate image: ${e.message}`));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(requestBody);
+    req.end();
+  });
+}
+
+// Download image from URL and save to public/blog/
+function downloadImage(url, slug) {
+  return new Promise((resolve, reject) => {
+    ensureDir(publicBlogDir);
+    const imagePath = path.join(publicBlogDir, `${slug}.png`);
+    const file = fs.createWriteStream(imagePath);
+
+    https.get(url, (response) => {
+      // Handle redirects
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        https.get(response.headers.location, (redirectResponse) => {
+          redirectResponse.pipe(file);
+          file.on('finish', () => {
+            file.close();
+            resolve(`/blog/${slug}.png`);
+          });
+        }).on('error', reject);
+      } else {
+        response.pipe(file);
+        file.on('finish', () => {
+          file.close();
+          resolve(`/blog/${slug}.png`);
+        });
+      }
+    }).on('error', (err) => {
+      fs.unlink(imagePath, () => {}); // Delete partial file
+      reject(err);
+    });
+  });
 }
 
 // Call OpenAI API to generate blog content
@@ -220,13 +317,14 @@ function generatePostTSX(meta, allTopics) {
   const relatedPostsJSX = generateRelatedPostsJSX(relatedPosts);
   const canonicalUrl = `${SITE_URL}/blog/${meta.slug}`;
   const isoDate = toISODateTime();
+  const imageUrl = meta.imagePath ? `${SITE_URL}${meta.imagePath}` : `${SITE_URL}/og-image.png`;
   
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": meta.title,
     "description": meta.summary,
-    "image": DEFAULT_IMAGE,
+    "image": imageUrl,
     "author": {
       "@type": "Organization",
       "name": SITE_NAME,
@@ -250,6 +348,17 @@ function generatePostTSX(meta, allTopics) {
     "wordCount": (meta.sections || []).reduce((acc, s) => acc + s.content.split(/\s+/).length, 0)
   };
   
+  // Generate featured image JSX if we have a custom image
+  const featuredImageJSX = meta.imagePath ? `
+            {/* Featured Image */}
+            <div className="mb-12 -mx-4 sm:mx-0">
+              <img 
+                src="${meta.imagePath}" 
+                alt="${escapeJSX(meta.title)}"
+                className="w-full rounded-xl shadow-lg"
+              />
+            </div>` : '';
+  
   return `import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import { Metadata } from 'next';
@@ -270,7 +379,7 @@ export const metadata: Metadata = {
     section: '${meta.category}',
     images: [
       {
-        url: '${DEFAULT_IMAGE}',
+        url: '${imageUrl}',
         width: 1200,
         height: 630,
         alt: '${escapeJSX(meta.title)}',
@@ -281,7 +390,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '${escapeJSX(meta.title)}',
     description: '${escapeJSX(meta.summary || '')}',
-    images: ['${DEFAULT_IMAGE}'],
+    images: ['${imageUrl}'],
   },
   alternates: {
     canonical: '${canonicalUrl}',
@@ -325,6 +434,7 @@ export default function BlogPost() {
         {/* Article Content */}
         <article className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto prose prose-lg prose-gray">
+${featuredImageJSX}
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               ${escapeJSX(meta.summary)}
             </p>
@@ -350,7 +460,7 @@ ${relatedPostsJSX}
 `;
 }
 
-function updateBlogListing(topic, slug, summary) {
+function updateBlogListing(topic, slug, summary, imagePath) {
   try {
     let content = fs.readFileSync(blogListingPath, 'utf8');
     
@@ -363,6 +473,7 @@ function updateBlogListing(topic, slug, summary) {
     date: '${toISODate()}',
     readTime: '${readTime} min read',
     category: '${topic.category}',
+    image: '${imagePath || ''}',
     featured: false
   },`;
 
@@ -395,6 +506,7 @@ async function main() {
   }
 
   const topic = topics[state.index % topics.length];
+  const slug = safeSlug(topic.slug || topic.title);
   console.log(`Generating post ${state.index + 1}/${topics.length}: "${topic.title}"`);
   
   // Generate content with AI
@@ -408,11 +520,21 @@ async function main() {
     process.exit(1);
   }
 
+  // Generate featured image with DALL-E
+  console.log('Generating featured image with DALL-E...');
+  let imagePath = null;
+  try {
+    imagePath = await generateImageWithDALLE(topic, slug);
+    console.log(`Image generated and saved to: ${imagePath}`);
+  } catch (err) {
+    console.error('Failed to generate image (continuing without image):', err.message);
+    // Continue without image - not a fatal error
+  }
+
   // Update state for next run
   state.index = (state.index + 1) % topics.length;
   writeJson(statePath, state);
 
-  const slug = safeSlug(topic.slug || topic.title);
   const targetDir = path.join(blogDir, slug);
   ensureDir(targetDir);
   const pagePath = path.join(targetDir, 'page.tsx');
@@ -424,13 +546,14 @@ async function main() {
     summary: generatedContent.summary || '',
     sections: generatedContent.sections || [],
     target_keywords: topic.target_keywords || [],
+    imagePath: imagePath,
   }, topics);
 
   fs.writeFileSync(pagePath, tsx);
   console.log(`Generated SEO-optimized blog post: app/blog/${slug}/page.tsx`);
   
   // Update the blog listing page
-  updateBlogListing(topic, slug, generatedContent.summary);
+  updateBlogListing(topic, slug, generatedContent.summary, imagePath);
   
   console.log('Blog generation complete!');
 }
