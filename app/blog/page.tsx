@@ -134,6 +134,16 @@ const blogPosts = [
     category: 'LinkedIn Ads',
     featured: false
   },
+  {
+    slug: 'request-facebook-business-manager-access-clients',
+    title: 'How to Request Facebook Business Manager Access from Clients (Without the Headache)',
+    excerpt: 'Learn how to request Facebook Business Manager access from clients easily without hassle. Streamline with tips and tools like ClientFuse.',
+    date: '2026-01-23',
+    readTime: '6 min read',
+    category: 'Facebook Ads',
+    image: '/blog/request-facebook-business-manager-access-clients.png',
+    featured: false
+  },
 ];
 
 export default function Blog() {
