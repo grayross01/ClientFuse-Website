@@ -23,6 +23,8 @@ jobs:
 
       - name: Generate blog post
         run: node scripts/generate-blog.js
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Commit and push changes
         run: |

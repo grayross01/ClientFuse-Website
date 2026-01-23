@@ -1,19 +1,24 @@
 #!/usr/bin/env node
 /*
-  Generates SEO-optimized blog posts in app/blog/<slug>/page.tsx
-  Uses detailed topic data from scripts/blog-topics.json
-  Maintains state in scripts/.blog-state.json to rotate topics.
+  Generates SEO-optimized blog posts using OpenAI
+  Uses topic seeds from scripts/blog-topics.json
+  Maintains state in scripts/.blog-state.json to rotate topics
   
   SEO Features:
+  - AI-generated content optimized for target keywords
   - OpenGraph metadata for social sharing
   - Twitter card metadata
   - Article schema markup (JSON-LD)
   - Canonical URLs
   - Keywords meta tags
   - Related articles cross-linking
+  
+  Required Environment Variable:
+  - OPENAI_API_KEY
 */
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
 
 const repoRoot = path.resolve(__dirname, '..');
 const topicsPath = path.join(__dirname, 'blog-topics.json');
@@ -24,6 +29,7 @@ const blogListingPath = path.join(blogDir, 'page.tsx');
 const SITE_URL = 'https://clientfuse.io';
 const SITE_NAME = 'ClientFuse';
 const DEFAULT_IMAGE = 'https://clientfuse.io/og-image.png';
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 function readJson(p) {
   return JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -58,66 +64,120 @@ function escapeJSX(str) {
   return str.replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/`/g, '\\`');
 }
 
-function escapeForJSON(str) {
-  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n');
+// Call OpenAI API to generate blog content
+async function generateContentWithAI(topic) {
+  if (!OPENAI_API_KEY) {
+    console.error('ERROR: OPENAI_API_KEY environment variable is required');
+    process.exit(1);
+  }
+
+  const prompt = `You are an expert content writer for ClientFuse, a SaaS tool that helps marketing agencies get access to client ad accounts (Facebook, Google, Instagram, etc.) through a single, simple link instead of back-and-forth emails.
+
+Write a comprehensive, SEO-optimized blog post for marketing agency owners and managers.
+
+TOPIC: ${topic.title}
+
+TARGET KEYWORDS (naturally incorporate these): ${topic.target_keywords.join(', ')}
+
+SEARCH INTENT: ${topic.search_intent}
+
+CONTENT OUTLINE (follow this structure):
+${topic.outline.map((section, i) => `${i + 1}. ${section}`).join('\n')}
+
+CTA ANGLE FOR CLIENTFUSE: ${topic.cta_angle}
+
+REQUIREMENTS:
+1. Write 1,200-1,800 words of high-quality, actionable content
+2. Use a professional but conversational tone
+3. Include specific, practical advice agencies can use immediately
+4. Naturally mention ClientFuse as a solution where relevant (don't be salesy)
+5. Format the response as JSON with this structure:
+
+{
+  "summary": "A compelling 2-3 sentence meta description (under 160 characters) that includes the primary keyword",
+  "sections": [
+    {
+      "heading": "Section heading",
+      "content": "Detailed paragraph content for this section. Make it substantial (150-300 words per section)."
+    }
+  ]
 }
 
-function generateKeywords(title, category, sections) {
-  // Extract keywords from title and headings
-  const words = new Set();
-  
-  // Add category
+IMPORTANT: 
+- Return ONLY valid JSON, no markdown code blocks
+- Each section should be 150-300 words
+- The summary should be under 160 characters for SEO
+- Make content genuinely helpful, not just promotional`;
+
+  const requestBody = JSON.stringify({
+    model: 'gpt-4o',
+    messages: [
+      { role: 'system', content: 'You are an expert SEO content writer specializing in marketing agency topics. Always respond with valid JSON only.' },
+      { role: 'user', content: prompt }
+    ],
+    temperature: 0.7,
+    max_tokens: 4000
+  });
+
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'api.openai.com',
+      port: 443,
+      path: '/v1/chat/completions',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Length': Buffer.byteLength(requestBody)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const response = JSON.parse(data);
+          if (response.error) {
+            reject(new Error(`OpenAI API Error: ${response.error.message}`));
+            return;
+          }
+          const content = response.choices[0].message.content;
+          // Parse the JSON response from GPT
+          const parsed = JSON.parse(content);
+          resolve(parsed);
+        } catch (e) {
+          reject(new Error(`Failed to parse OpenAI response: ${e.message}\nResponse: ${data.substring(0, 500)}`));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.write(requestBody);
+    req.end();
+  });
+}
+
+function generateKeywords(title, category, targetKeywords) {
+  const words = new Set(targetKeywords || []);
   words.add(category.toLowerCase());
   
-  // Common marketing agency keywords
-  const baseKeywords = ['marketing agency', 'digital marketing', 'agency tips', 'client management'];
+  // Base ClientFuse keywords
+  const baseKeywords = ['marketing agency', 'client access', 'ad account access', 'ClientFuse'];
   baseKeywords.forEach(k => words.add(k));
-  
-  // Extract from title
-  title.toLowerCase().split(/\s+/).forEach(word => {
-    if (word.length > 4 && !['with', 'from', 'that', 'this', 'your', 'their', 'about'].includes(word)) {
-      words.add(word);
-    }
-  });
-  
-  // Extract from section headings
-  sections.forEach(s => {
-    s.heading.toLowerCase().split(/\s+/).forEach(word => {
-      if (word.length > 4) words.add(word);
-    });
-  });
   
   return Array.from(words).slice(0, 10).join(', ');
 }
 
 function generateSectionsJSX(sections) {
   return sections.map(section => `
-          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">${section.heading}</h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            ${section.content}
+          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">${escapeJSX(section.heading)}</h2>
+          <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
+            ${escapeJSX(section.content)}
           </p>`).join('\n');
 }
 
-function generateLinksJSX(links) {
-  if (!links || links.length === 0) return '';
-  
-  const linkItems = links.map(l => 
-    `            <li>
-              <a href="${l.url}" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">
-                ${l.label}
-              </a>
-            </li>`
-  ).join('\n');
-  
-  return `
-          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Resources & Further Reading</h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
-${linkItems}
-          </ul>`;
-}
-
 function getRelatedPosts(currentSlug, allTopics, count = 3) {
-  // Get other topics as related posts, excluding current
   const related = allTopics
     .filter(t => safeSlug(t.slug || t.title) !== currentSlug)
     .slice(0, count);
@@ -137,8 +197,8 @@ function generateRelatedPostsJSX(relatedPosts) {
               href="/blog/${post.slug}"
               className="block p-4 bg-white rounded-xl border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
             >
-              <span className="text-xs text-blue-600 font-medium">${post.category}</span>
-              <h4 className="text-gray-900 font-semibold mt-1 line-clamp-2">${post.title}</h4>
+              <span className="text-xs text-blue-600 font-medium">${escapeJSX(post.category)}</span>
+              <h4 className="text-gray-900 font-semibold mt-1 line-clamp-2">${escapeJSX(post.title)}</h4>
             </Link>`
   ).join('\n');
   
@@ -154,15 +214,13 @@ ${postItems}
 
 function generatePostTSX(meta, allTopics) {
   const sectionsJSX = generateSectionsJSX(meta.sections || []);
-  const linksJSX = generateLinksJSX(meta.links);
   const readTime = Math.max(5, Math.ceil((meta.sections || []).reduce((acc, s) => acc + s.content.length, 0) / 1000));
-  const keywords = generateKeywords(meta.title, meta.category, meta.sections || []);
+  const keywords = generateKeywords(meta.title, meta.category, meta.target_keywords);
   const relatedPosts = getRelatedPosts(meta.slug, allTopics);
   const relatedPostsJSX = generateRelatedPostsJSX(relatedPosts);
   const canonicalUrl = `${SITE_URL}/blog/${meta.slug}`;
   const isoDate = toISODateTime();
   
-  // Create Article schema for JSON-LD
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -250,7 +308,7 @@ export default function BlogPost() {
             <div className="mb-6">
               <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">${meta.category}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">${meta.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">${escapeJSX(meta.title)}</h1>
             <div className="flex items-center gap-4 text-gray-500">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
@@ -268,10 +326,9 @@ export default function BlogPost() {
         <article className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto prose prose-lg prose-gray">
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              ${meta.summary}
+              ${escapeJSX(meta.summary)}
             </p>
 ${sectionsJSX}
-${linksJSX}
 ${relatedPostsJSX}
 
             {/* CTA Section */}
@@ -293,29 +350,26 @@ ${relatedPostsJSX}
 `;
 }
 
-function updateBlogListing(topic, slug) {
+function updateBlogListing(topic, slug, summary) {
   try {
     let content = fs.readFileSync(blogListingPath, 'utf8');
     
-    const readTime = Math.max(5, Math.ceil((topic.sections || []).reduce((acc, s) => acc + s.content.length, 0) / 1000));
+    const readTime = Math.max(5, Math.ceil((topic.outline || []).length * 200 / 200));
     
     const newEntry = `  {
     slug: '${slug}',
     title: '${escapeJSX(topic.title)}',
-    excerpt: '${escapeJSX(topic.summary || '')}',
+    excerpt: '${escapeJSX(summary || '')}',
     date: '${toISODate()}',
     readTime: '${readTime} min read',
     category: '${topic.category}',
     featured: false
   },`;
 
-    // Find the blogPosts array and add the new entry
     const arrayMatch = content.match(/const blogPosts = \[([\s\S]*?)\];/);
     if (arrayMatch) {
       const existingArray = arrayMatch[1];
-      // Check if this post already exists
       if (!existingArray.includes(`slug: '${slug}'`)) {
-        // Remove trailing comma if present to avoid double commas
         let trimmedArray = existingArray.trimEnd();
         if (trimmedArray.endsWith(',')) {
           trimmedArray = trimmedArray.slice(0, -1);
@@ -331,7 +385,9 @@ function updateBlogListing(topic, slug) {
   }
 }
 
-function main() {
+async function main() {
+  console.log('Starting blog generation...');
+  
   const topics = readJson(topicsPath);
   let state = { index: 0 };
   if (fs.existsSync(statePath)) {
@@ -339,6 +395,20 @@ function main() {
   }
 
   const topic = topics[state.index % topics.length];
+  console.log(`Generating post ${state.index + 1}/${topics.length}: "${topic.title}"`);
+  
+  // Generate content with AI
+  console.log('Calling OpenAI API to generate content...');
+  let generatedContent;
+  try {
+    generatedContent = await generateContentWithAI(topic);
+    console.log('Content generated successfully');
+  } catch (err) {
+    console.error('Failed to generate content:', err.message);
+    process.exit(1);
+  }
+
+  // Update state for next run
   state.index = (state.index + 1) % topics.length;
   writeJson(statePath, state);
 
@@ -351,16 +421,21 @@ function main() {
     title: topic.title,
     slug: slug,
     category: topic.category || 'Blog',
-    summary: topic.summary || '',
-    sections: topic.sections || [],
-    links: topic.links || [],
+    summary: generatedContent.summary || '',
+    sections: generatedContent.sections || [],
+    target_keywords: topic.target_keywords || [],
   }, topics);
 
   fs.writeFileSync(pagePath, tsx);
   console.log(`Generated SEO-optimized blog post: app/blog/${slug}/page.tsx`);
   
   // Update the blog listing page
-  updateBlogListing(topic, slug);
+  updateBlogListing(topic, slug, generatedContent.summary);
+  
+  console.log('Blog generation complete!');
 }
 
-main();
+main().catch(err => {
+  console.error('Error:', err);
+  process.exit(1);
+});
