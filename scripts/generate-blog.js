@@ -130,35 +130,53 @@ The image should work well as a 1200x630 blog header/social share image.`;
   });
 }
 
-// Download image from URL and save to public/blog/
-function downloadImage(url, slug) {
-  return new Promise((resolve, reject) => {
-    ensureDir(publicBlogDir);
-    const imagePath = path.join(publicBlogDir, `${slug}.png`);
-    const file = fs.createWriteStream(imagePath);
-
-    https.get(url, (response) => {
-      // Handle redirects
-      if (response.statusCode === 301 || response.statusCode === 302) {
-        https.get(response.headers.location, (redirectResponse) => {
-          redirectResponse.pipe(file);
+// Download image from URL, compress it, and save to public/blog/
+async function downloadImage(url, slug) {
+  ensureDir(publicBlogDir);
+  const tempPath = path.join(publicBlogDir, `${slug}-temp.png`);
+  const finalPath = path.join(publicBlogDir, `${slug}.webp`);
+  
+  // Download the image first
+  await new Promise((resolve, reject) => {
+    const file = fs.createWriteStream(tempPath);
+    
+    const downloadUrl = (targetUrl) => {
+      https.get(targetUrl, (response) => {
+        if (response.statusCode === 301 || response.statusCode === 302) {
+          downloadUrl(response.headers.location);
+        } else {
+          response.pipe(file);
           file.on('finish', () => {
             file.close();
-            resolve(`/blog/${slug}.png`);
+            resolve();
           });
-        }).on('error', reject);
-      } else {
-        response.pipe(file);
-        file.on('finish', () => {
-          file.close();
-          resolve(`/blog/${slug}.png`);
-        });
-      }
-    }).on('error', (err) => {
-      fs.unlink(imagePath, () => {}); // Delete partial file
-      reject(err);
-    });
+        }
+      }).on('error', reject);
+    };
+    
+    downloadUrl(url);
   });
+  
+  // Compress and convert to WebP using sharp
+  try {
+    const sharp = require('sharp');
+    await sharp(tempPath)
+      .resize(1200, 630, { fit: 'cover' })
+      .webp({ quality: 85 })
+      .toFile(finalPath);
+    
+    // Remove temp file
+    fs.unlinkSync(tempPath);
+    
+    console.log(`Image compressed: ${finalPath}`);
+    return `/blog/${slug}.webp`;
+  } catch (err) {
+    console.log('Sharp not available, keeping original PNG:', err.message);
+    // If sharp fails, rename temp to final PNG
+    const pngPath = path.join(publicBlogDir, `${slug}.png`);
+    fs.renameSync(tempPath, pngPath);
+    return `/blog/${slug}.png`;
+  }
 }
 
 // Call OpenAI API to generate blog content
@@ -266,12 +284,41 @@ function generateKeywords(title, category, targetKeywords) {
   return Array.from(words).slice(0, 10).join(', ');
 }
 
+function generateSlugFromHeading(heading) {
+  return heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
+function generateTableOfContents(sections) {
+  if (!sections || sections.length < 2) return '';
+  
+  const tocItems = sections.map(section => {
+    const id = generateSlugFromHeading(section.heading);
+    return `              <li>
+                <a href="#${id}" className="text-blue-600 hover:text-blue-800 hover:underline">
+                  ${escapeJSX(section.heading)}
+                </a>
+              </li>`;
+  }).join('\n');
+  
+  return `
+            {/* Table of Contents */}
+            <nav className="bg-gray-50 rounded-xl p-6 mb-12 not-prose">
+              <h2 className="text-lg font-bold text-gray-900 mb-4">Table of Contents</h2>
+              <ol className="list-decimal list-inside space-y-2 text-gray-700">
+${tocItems}
+              </ol>
+            </nav>`;
+}
+
 function generateSectionsJSX(sections) {
-  return sections.map(section => `
-          <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">${escapeJSX(section.heading)}</h2>
+  return sections.map(section => {
+    const id = generateSlugFromHeading(section.heading);
+    return `
+          <h2 id="${id}" className="text-2xl font-bold text-gray-900 mt-12 mb-4 scroll-mt-24">${escapeJSX(section.heading)}</h2>
           <p className="text-gray-700 leading-relaxed mb-6 whitespace-pre-line">
             ${escapeJSX(section.content)}
-          </p>`).join('\n');
+          </p>`;
+  }).join('\n');
 }
 
 function getRelatedPosts(currentSlug, allTopics, count = 3) {
@@ -311,6 +358,7 @@ ${postItems}
 
 function generatePostTSX(meta, allTopics) {
   const sectionsJSX = generateSectionsJSX(meta.sections || []);
+  const tocJSX = generateTableOfContents(meta.sections || []);
   const readTime = Math.max(5, Math.ceil((meta.sections || []).reduce((acc, s) => acc + s.content.length, 0) / 1000));
   const keywords = generateKeywords(meta.title, meta.category, meta.target_keywords);
   const relatedPosts = getRelatedPosts(meta.slug, allTopics);
@@ -438,6 +486,7 @@ ${featuredImageJSX}
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               ${escapeJSX(meta.summary)}
             </p>
+${tocJSX}
 ${sectionsJSX}
 ${relatedPostsJSX}
 
