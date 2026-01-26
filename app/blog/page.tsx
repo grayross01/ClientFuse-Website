@@ -144,6 +144,16 @@ const blogPosts = [
     image: '/blog/request-facebook-business-manager-access-clients.png',
     featured: false
   },
+  {
+    slug: 'google-ads-mcc-client-account-access',
+    title: 'Google Ads MCC: How to Get Client Account Access the Right Way',
+    excerpt: 'Learn how to request Google Ads client access via MCC, manage permissions, and troubleshoot issues efficiently with expert tips and ClientFuse.',
+    date: '2026-01-26',
+    readTime: '6 min read',
+    category: 'Google Ads',
+    image: '/blog/google-ads-mcc-client-account-access.webp',
+    featured: false
+  },
 ];
 
 export default function Blog() {
