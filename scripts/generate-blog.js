@@ -396,6 +396,32 @@ function generatePostTSX(meta, allTopics) {
     "wordCount": (meta.sections || []).reduce((acc, s) => acc + s.content.split(/\s+/).length, 0)
   };
   
+  // Breadcrumb schema for better search appearance
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": `${SITE_URL}/blog`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": meta.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+  
   // Generate featured image JSX if we have a custom image
   const featuredImageJSX = meta.imagePath ? `
             {/* Featured Image */}
@@ -408,7 +434,7 @@ function generatePostTSX(meta, allTopics) {
             </div>` : '';
   
   return `import Link from 'next/link';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -448,20 +474,30 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   const articleSchema = ${JSON.stringify(articleSchema, null, 4).split('\n').map((line, i) => i === 0 ? line : '  ' + line).join('\n')};
 
+  const breadcrumbSchema = ${JSON.stringify(breadcrumbSchema, null, 4).split('\n').map((line, i) => i === 0 ? line : '  ' + line).join('\n')};
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="min-h-screen bg-white">
         {/* Header */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
           <div className="max-w-4xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Blog
-            </Link>
+            {/* Breadcrumb Navigation */}
+            <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8" aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
+              <ChevronRight className="w-4 h-4" />
+              <Link href="/blog" className="hover:text-blue-600 transition-colors">Blog</Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-gray-900 font-medium truncate max-w-[200px]">${escapeJSX(meta.title)}</span>
+            </nav>
             <div className="mb-6">
               <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">${meta.category}</span>
             </div>
@@ -496,9 +532,17 @@ ${relatedPostsJSX}
               <p className="text-gray-700 mb-6">
                 Stop chasing clients for account access. ClientFuse lets you send one simple link to get instant access to Facebook, Google, Instagram, and more marketing platforms.
               </p>
-              <Link href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary inline-block">
+              <a 
+                href="https://app.clientfuse.io/auth/login?signup=true" 
+                className="btn-primary inline-block"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+                    (window as any).fbq('track', 'Lead', { content_name: 'Blog CTA', content_category: 'Blog' });
+                  }
+                }}
+              >
                 Start Free Trial
-              </Link>
+              </a>
             </div>
           </div>
         </article>

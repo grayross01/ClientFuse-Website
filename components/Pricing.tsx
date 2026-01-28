@@ -3,6 +3,16 @@
 import { Check, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
+// Track signup button clicks with Facebook Pixel
+const trackSignupClick = (planName: string) => {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Lead', {
+      content_name: planName,
+      content_category: 'Pricing'
+    });
+  }
+};
+
 const plans = [
   {
     name: "Starter",
@@ -143,6 +153,7 @@ export default function Pricing() {
                       ? "btn-primary text-white"
                       : "btn-secondary"
                   }`}
+                  onClick={() => plan.cta !== "Contact Sales" && trackSignupClick(plan.name)}
                 >
                   {plan.cta}
                 </a>

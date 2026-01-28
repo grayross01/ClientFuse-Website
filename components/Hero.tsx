@@ -2,6 +2,16 @@
 
 import { ArrowRight, Check } from "lucide-react";
 
+// Track signup button clicks with Facebook Pixel
+const trackSignupClick = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Lead', {
+      content_name: 'Start Free Trial',
+      content_category: 'Signup'
+    });
+  }
+};
+
 export default function Hero() {
   return (
     <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
@@ -25,7 +35,11 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <a href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group">
+            <a 
+              href="https://app.clientfuse.io/auth/login?signup=true" 
+              className="btn-primary text-lg px-8 py-4 flex items-center gap-2 group"
+              onClick={trackSignupClick}
+            >
               Start Free Trial
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

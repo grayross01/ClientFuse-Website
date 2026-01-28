@@ -1,24 +1,45 @@
 import { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
+
+// Dynamically get all blog post slugs from the filesystem
+function getBlogPosts(): { slug: string; lastModified: Date }[] {
+  const blogDir = path.join(process.cwd(), 'app', 'blog')
+  
+  try {
+    const entries = fs.readdirSync(blogDir, { withFileTypes: true })
+    
+    return entries
+      .filter(entry => {
+        // Only include directories that have a page.tsx file (actual blog posts)
+        if (!entry.isDirectory()) return false
+        const pagePath = path.join(blogDir, entry.name, 'page.tsx')
+        return fs.existsSync(pagePath)
+      })
+      .map(entry => {
+        const pagePath = path.join(blogDir, entry.name, 'page.tsx')
+        const stats = fs.statSync(pagePath)
+        return {
+          slug: entry.name,
+          lastModified: stats.mtime,
+        }
+      })
+      .sort((a, b) => b.lastModified.getTime() - a.lastModified.getTime())
+  } catch (error) {
+    console.error('Error reading blog directory:', error)
+    return []
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://clientfuse.io'
   
-  // All blog posts with their publish dates
-  const blogPosts = [
-    { slug: 'top-5-social-media-management-platforms-agencies', date: '2024-01-15' },
-    { slug: 'how-to-get-client-access-facebook-ads', date: '2024-10-24' },
-    { slug: 'complete-guide-client-onboarding-marketing-agencies', date: '2025-11-29' },
-    { slug: 'how-to-price-marketing-agency-services-2025', date: '2025-12-01' },
-    { slug: 'google-ads-account-structure-best-practices-agencies', date: '2025-12-04' },
-    { slug: 'building-repeatable-client-reporting-system', date: '2025-12-08' },
-    { slug: 'managing-remote-marketing-teams-leading-agencies', date: '2025-12-08' },
-    { slug: 'facebook-ads-ecommerce-agency-playbook', date: '2025-12-11' },
-    { slug: 'how-to-fire-client-when-you-should', date: '2025-12-15' },
-  ]
+  // Dynamically get all blog posts from the filesystem
+  const blogPosts = getBlogPosts()
   
   const blogUrls = blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: post.lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))

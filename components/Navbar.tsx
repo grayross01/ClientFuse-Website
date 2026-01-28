@@ -3,6 +3,16 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// Track signup button clicks with Facebook Pixel
+const trackSignupClick = () => {
+  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'Lead', {
+      content_name: 'Try Free',
+      content_category: 'Signup'
+    });
+  }
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,7 +55,7 @@ export default function Navbar() {
             <a href="https://app.clientfuse.io/auth/login" className="text-gray-700 hover:text-gray-900 transition-colors">
               Log In
             </a>
-            <a href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary">
+            <a href="https://app.clientfuse.io/auth/login?signup=true" className="btn-primary" onClick={trackSignupClick}>
               Try Free
             </a>
           </div>
@@ -71,7 +81,7 @@ export default function Navbar() {
             <a href="/blog" className="block text-gray-700 hover:text-gray-900">Blog</a>
             <a href="#faq" className="block text-gray-700 hover:text-gray-900">FAQ</a>
             <a href="https://app.clientfuse.io/auth/login" className="block text-gray-700 hover:text-gray-900">Log In</a>
-            <a href="https://app.clientfuse.io/auth/login?signup=true" className="block btn-primary text-center">Try Free</a>
+            <a href="https://app.clientfuse.io/auth/login?signup=true" className="block btn-primary text-center" onClick={trackSignupClick}>Try Free</a>
           </div>
         </div>
       )}
