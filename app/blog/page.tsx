@@ -154,6 +154,16 @@ const blogPosts = [
     image: '/blog/google-ads-mcc-client-account-access.webp',
     featured: false
   },
+  {
+    slug: 'client-onboarding-checklist-marketing-agencies',
+    title: 'The Complete Client Onboarding Checklist for Marketing Agencies',
+    excerpt: 'Streamline your agency\'s new client setup process with this comprehensive client onboarding checklist tailored for marketing agencies.',
+    date: '2026-01-28',
+    readTime: '6 min read',
+    category: 'Client Management',
+    image: '/blog/client-onboarding-checklist-marketing-agencies.webp',
+    featured: false
+  },
 ];
 
 export default function Blog() {
