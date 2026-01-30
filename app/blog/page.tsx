@@ -164,6 +164,16 @@ const blogPosts = [
     image: '/blog/client-onboarding-checklist-marketing-agencies.webp',
     featured: false
   },
+  {
+    slug: 'get-instagram-business-account-access-clients',
+    title: 'How to Get Instagram Business Account Access from Clients',
+    excerpt: 'Learn how to get Instagram business account access seamlessly, manage client Instagram accounts, and resolve common issues with ClientFuse.',
+    date: '2026-01-30',
+    readTime: '6 min read',
+    category: 'Instagram',
+    image: '/blog/get-instagram-business-account-access-clients.webp',
+    featured: false
+  },
 ];
 
 export default function Blog() {
